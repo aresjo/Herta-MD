@@ -1,0 +1,71 @@
+Arguments: 
+  /data/data/com.termux/files/usr/bin/node /data/data/com.termux/files/usr/share/yarn/bin/yarn.js
+
+PATH: 
+  /data/data/com.termux/files/usr/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  19.6.1
+
+Platform: 
+  android arm64
+
+Trace: 
+  Error: EPERM: operation not permitted, symlink '../../../../pino/bin.js' -> '/storage/emulated/0/store-v9/node_modules/@adiwajshing/baileys/node_modules/.bin/pino'
+
+npm manifest: 
+  {
+    "name": "jer-store",
+    "version": "1.1.0",
+    "description": "Bot WhatsApp Khusus Store atau Jualan, berisi fitur-fitur grup seperti addlist, antilink,kick, dan lainnya.",
+    "main": "index.js",
+    "type": "commonjs",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "author": "Jer-Ofc",
+    "license": "MIT",
+    "dependencies": {
+      "@adiwajshing/baileys": "npm:baileys-md@^5.0.5",
+      "@adiwajshing/keyed-db": "^0.2.4",
+      "@bochilteam/scraper": "^2.0.0",
+      "@vitalets/google-translate-api": "^7.0.0",
+      "awesome-phonenumber": "^2.64.0",
+      "chalk": "^4.1.2",
+      "cheerio": "^1.0.0-rc.10",
+      "fetch": "^1.1.0",
+      "file-type": "^16.5.3",
+      "form-data": "*",
+      "openai": "^3.1.0",
+      "spotifydl-x": "^0.3.0",
+      "youtube-yts": "^2.0.0",
+      "youtubedl-core": "^4.11.2",
+      "google-it": "^1.6.3",
+      "node-youtube-music": "^0.8.3",
+      "fs": "0.0.1-security",
+      "insta-fetcher": "^1.3.24",
+      "node-webpmux": "^3.1.1",
+      "node-id3": "^0.2.3",
+      "moment-timezone": "^0.5.34",
+      "simple-find-lyrics": "^0.0.1",
+      "ms": "^2.1.3",
+      "node-fetch": "^2.6.1",
+      "jsdom": "^16.4.0",
+      "pino": "^7.0.5",
+      "qrcode-terminal": "^0.12.0",
+      "scrape-primbon": "^1.1.0",
+      "yargs": "^17.2.1",
+      "child_process": "^1.0.2",
+      "similarity": "^1.2.1",
+      "util": "^0.12.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
