@@ -1,12 +1,16 @@
-// NOTE  \\
-
-// BASE ORI BY JER OFC \\
-// JANGAN NGAKU� BASE LU DECK WOWKWOK \\
-// RENAME GPP TAPI TOLONG HARGAIN PEMBUAT NYA \\
-// JANGAN DI JUAL !!! \\
-
+// BASE ORI BY JER OFC
+// Recode By Zeltoria
 require('./settings')
-const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
+const { 
+BufferJSON, 
+WA_DEFAULT_EPHEMERAL, 
+generateWAMessageFromContent, 
+proto, 
+generateWAMessageContent, 
+generateWAMessage, 
+prepareWAMessageMedia, 
+areJidsSameUser, 
+getContentType } = require('@adiwajshing/baileys')
 const fs = require('fs');
 const os = require('os')
 const util = require('util');
@@ -43,7 +47,7 @@ const similarity = require('similarity')
 const threshold = 0.72
 
 const jawabanBenar = (tebak) => {
-	return` ${tebak} \n\nJawaban Benar \nSelamat Kamu Ga Dapet Apa-Apa🗿`
+	return` ${tebak} \n\nJawaban Benar \nSelamat Kamu Ga Dapet Apa-ApaðŸ—¿`
 }
 const waktuHabis = (jawaban) => {
 	return `Waktu Habis\nJawaban:  ${jawaban}`
@@ -185,7 +189,7 @@ const { ext } = await fromBuffer(medianya) || options.ext
 
 const tanggal = (numer) => {
 	myMonths = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
-				myDays = ['Minggu','Senin','Selasa','Rabu','Kamis','Jum’at','Sabtu']; 
+				myDays = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumâ€™at','Sabtu']; 
 				var tgl = new Date(numer);
 				var day = tgl.getDate()
 				bulan = tgl.getMonth()
@@ -202,23 +206,23 @@ const tanggal = (numer) => {
 				return`${thisDay}, ${day} - ${myMonths[bulan]} - ${year}`
 }
 
-module.exports = alpha = async (alpha, m, chatUpdate, store, opengc, antilink, antiwame, antilink2, antiwame2, set_welcome_db, set_left_db, set_proses, set_done, set_open, set_close, sewa, _welcome, _left, db_respon_list, ) => {
+module.exports = herta = async (herta, m, chatUpdate, store, opengc, antilink, antiwame, antilink2, antiwame2, set_welcome_db, set_left_db, set_proses, set_done, set_open, set_close, sewa, _welcome, _left, db_respon_list, ) => {
     try {
         var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : '' //omzee
         var budy = (typeof m.text == 'string' ? m.text : '')
-        const isCmd = /^[���׶������_=|~!?#/$%^&.+-,\\\�^]/.test(body)
+        const isCmd = /^[°•÷×¶£¢€¥®™_=|~!?#/$%^&.+-,\\\©^]/.test(body)
         const prefix = isCmd ? budy[0] : ''
         const command = isCmd ? body.slice(1).trim().split(' ').shift().toLowerCase() : ''
         const args = body.trim().split(/ +/).slice(1)
         const pushname = m.pushName || "No Name"
-        const botNumber = await alpha.decodeJid(alpha.user.id)
+        const botNumber = await herta.decodeJid(herta.user.id)
         const isCreator = ["6281315252010@s.whatsapp.net",botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const text = q = args.join(" ")
         const salam = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('a')
         const quoted = m.quoted ? m.quoted : m
         const mime = (quoted.msg || quoted).mimetype || ''
         const isMedia = /image|video|sticker|audio/.test(mime)
-        const groupMetadata = m.isGroup ? await alpha.groupMetadata(m.chat).catch(e => {}) : ''
+        const groupMetadata = m.isGroup ? await herta.groupMetadata(m.chat).catch(e => {}) : ''
         const groupName = m.isGroup ? groupMetadata.subject : ''
         const participants = m.isGroup ? await groupMetadata.participants : ''
         const from = mek.key.remoteJid
@@ -238,7 +242,7 @@ const isLeft = _left.includes(m.chat)
         const time = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('HH:mm:ss z')
 
 const reply = async (text) =>{
-	return await alpha.sendFakeLink(m.chat, text, salam, pushname, m)
+	return await herta.sendFakeLink(m.chat, text, salam, pushname, m)
 }
 
 const fkontak = { key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { 'contactMessage': { 'displayName': `Bot Created By Jer Ofc\n`, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;rulzxdBot,;;;\nFN:${pushname},\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, 'jpegThumbnail': { url: 'https://telegra.ph/file/33e79ab21ec0446cc3e4f.jpg' }}}}
@@ -248,7 +252,7 @@ function parseMention(text = '') {
 
 async function getGcName(groupID) {
             try {
-                let data_name = await alpha.groupMetadata(groupID)
+                let data_name = await herta.groupMetadata(groupID)
                 return data_name.subject
             } catch (err) {
                 return '-'
@@ -256,28 +260,28 @@ async function getGcName(groupID) {
         }
         
 if(m.isGroup){
-    expiredCheck(alpha, sewa)
+    expiredCheck(herta, sewa)
     }
         function pickRandom(list) {
         	return list[Math.floor(Math.random() * list.length)]
         }
         
         //autotyper all
-        if (global.autoTyping) { if (m.chat) { alpha.sendPresenceUpdate('composing', m.chat) }
+        if (global.autoTyping) { if (m.chat) { herta.sendPresenceUpdate('composing', m.chat) }
        }
             
       if (isAntiLink) {
         if (budy.match(`chat.whatsapp.com`)) {
-        reply(`*「 ANTI LINK 」*\n\nLink grup detected, maaf kamu akan di kick !`)
+        reply(`*ã€Œ ANTI LINK ã€*\n\nLink grup detected, maaf kamu akan di kick !`)
         if (!isBotAdmins) return reply(`Upsss... gajadi, bot bukan admin`)
-        let gclink = (`https://chat.whatsapp.com/`+await alpha.groupInviteCode(m.chat))
+        let gclink = (`https://chat.whatsapp.com/`+await herta.groupInviteCode(m.chat))
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isgclink = isLinkThisGc.test(m.text)
         if (isgclink) return reply(`Upsss... gak jadi, untung link gc sendiri`)
         if (isAdmins) return reply(`Upsss... gak jadi, kasian adminnya klo di kick`)
         if (isCreator) return reply(`Upsss... gak jadi, kasian owner ku klo di kick`)
         if (m.key.fromMe) return reply(`Upsss... gak jadi, kasian owner ku klo di kick`)
-await alpha.sendMessage(m.chat, {
+await herta.sendMessage(m.chat, {
                delete: {
                   remoteJid: m.chat,
 
@@ -286,20 +290,20 @@ await alpha.sendMessage(m.chat, {
                   participant: m.key.participant
                }
             })
-        alpha.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+        herta.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
         }
       if (isAntiLink2) {
         if (budy.match(`chat.whatsapp.com`)) {
         if (!isBotAdmins) return //reply(`Upsss... gajadi, bot bukan admin`)
-        let gclink = (`https://chat.whatsapp.com/`+await alpha.groupInviteCode(m.chat))
+        let gclink = (`https://chat.whatsapp.com/`+await herta.groupInviteCode(m.chat))
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isgclink = isLinkThisGc.test(m.text)
         if (isgclink) return //reply(`Upsss... gak jadi, untung link gc sendiri`)
         if (isAdmins) return //reply(`Upsss... gak jadi, kasian adminnya klo di kick`)
         if (isCreator) return //reply(`Upsss... gak jadi, kasian owner ku klo di kick`)
         if (m.key.fromMe) return //reply(`Upsss... gak jadi, kasian owner ku klo di kick`)
-await alpha.sendMessage(m.chat, {
+await herta.sendMessage(m.chat, {
                delete: {
                   remoteJid: m.chat,
 
@@ -312,12 +316,12 @@ await alpha.sendMessage(m.chat, {
         }
       if (isAntiWame) {
         if (budy.match(`wa.me/`)) {
-        reply(`*「 ANTI WA ME 」*\n\nWa Me detected, maaf kamu akan di kick !`)
+        reply(`*ã€Œ ANTI WA ME ã€*\n\nWa Me detected, maaf kamu akan di kick !`)
         if (!isBotAdmins) return reply(`Upsss... gajadi, bot bukan admin`)
         if (isAdmins) return reply(`Upsss... gak jadi, kasian adminnya klo di kick`)
         if (isCreator) return reply(`Upsss... gak jadi, kasian owner ku klo di kick`)
         if (m.key.fromMe) return reply(`Upsss... gak jadi, kasian owner ku klo di kick`)
-await alpha.sendMessage(m.chat, {
+await herta.sendMessage(m.chat, {
                delete: {
                   remoteJid: m.chat,
 
@@ -326,7 +330,7 @@ await alpha.sendMessage(m.chat, {
                   participant: m.key.participant
                }
             })        
-        alpha.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+        herta.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
         }
       if (isAntiWame2) {
@@ -335,7 +339,7 @@ await alpha.sendMessage(m.chat, {
         if (isAdmins) return //reply(`Upsss... gak jadi, kasian adminnya klo di kick`)
         if (isCreator) return //reply(`Upsss... gak jadi, kasian owner ku klo di kick`)
         if (m.key.fromMe) return //reply(`Upsss... gak jadi, kasian owner ku klo di kick`)
-await alpha.sendMessage(m.chat, {
+await herta.sendMessage(m.chat, {
                delete: {
                   remoteJid: m.chat,
 
@@ -348,39 +352,39 @@ await alpha.sendMessage(m.chat, {
         }
       if (isAntiWame) {
         if (budy.includes((`Wa.me/`) || (`Wa.me/`))) {
-        reply(`*「 ANTI WA ME 」*\n\nWa Me detected, maaf kamu akan di kick !`)
+        reply(`*ã€Œ ANTI WA ME ã€*\n\nWa Me detected, maaf kamu akan di kick !`)
         if (!isBotAdmins) return reply(`Upsss... gajadi, bot bukan admin`)
         if (isAdmins) return reply(`Upsss... gak jadi, kasian adminnya klo di kick`)
         if (isCreator) return reply(`Upsss... gak jadi, kasian owner ku klo di kick`)
         if (m.key.fromMe) return reply(`Upsss... gak jadi, kasian owner ku klo di kick`)
-        alpha.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+        herta.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
         }
         
         if (isAlreadyResponList((m.isGroup ? m.chat: botNumber), body.toLowerCase(), db_respon_list)) {
             var get_data_respon = getDataResponList((m.isGroup ? m.chat: botNumber), body.toLowerCase(), db_respon_list)
             if (get_data_respon.isImage === false) {
-                alpha.sendMessage(m.chat, { text: sendResponList((m.isGroup ? m.chat: botNumber), body.toLowerCase(), db_respon_list) }, {
+                herta.sendMessage(m.chat, { text: sendResponList((m.isGroup ? m.chat: botNumber), body.toLowerCase(), db_respon_list) }, {
                     quoted: m
                 })
             } else {
-                alpha.sendMessage(m.chat, { image: await getBuffer(get_data_respon.image_url), caption: get_data_respon.response }, {
+                herta.sendMessage(m.chat, { image: await getBuffer(get_data_respon.image_url), caption: get_data_respon.response }, {
                     quoted: m
                 })
             }
         }
         
-        _prem.expiredCheck(alpha, premium)
+        _prem.expiredCheck(herta, premium)
 
         //antilink all by xeon
         if (AntiLinkAll)
         if (budy.includes("https://")){
         	if (!isBotAdmins) (bvl)
-        bvl = `\`\`\`ã€Œ Link Detected ã€\`\`\`\n\nAdmin has sent a link, admin is free to send any linkðŸ˜‡`
+        bvl = `\`\`\`Ã£â‚¬Å’ Link Detected Ã£â‚¬Â\`\`\`\n\nAdmin has sent a link, admin is free to send any linkÃ°Å¸Ëœâ€¡`
         if (isAdmins) return reply(bvl)
         if (m.key.fromMe) return reply(bvl)
         if (isCreator) return reply(bvl)
-        await alpha.sendMessage(m.chat,
+        await herta.sendMessage(m.chat,
         {
         	delete: {
         	remoteJid: m.chat,
@@ -389,8 +393,8 @@ await alpha.sendMessage(m.chat, {
         participant: m.key.participant
         }
         })
-        alpha.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-        alpha.sendMessage(from, {text:`\`\`\`ã€Œ Link Detected ã€\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending link in this group`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+        herta.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+        herta.sendMessage(from, {text:`\`\`\`Ã£â‚¬Å’ Link Detected Ã£â‚¬Â\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending link in this group`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
         } else {
         	}
         
@@ -412,7 +416,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
 return isSurender || room.terjawab[index] ? `(${index + 1}) ${jawaban} ${room.terjawab[index] ? '@' + room.terjawab[index].split('@')[0] : ''}`.trim() : false
 }).filter(v => v).join('\n')}
 ${isSurender ? '' : ``}`.trim()
-alpha.sendTextWithMentions(m.chat, caption, m)
+herta.sendTextWithMentions(m.chat, caption, m)
 .then(mes => {
 	return _family100['family100' + m.chat].pesan = mesg
 	}).catch(_ => _)
@@ -429,7 +433,7 @@ alpha.sendTextWithMentions(m.chat, caption, m)
 				}
 				else if (similarity(m.text.toLowerCase(), jawaban) >= threshold)
 				reply(`_Ya, Dikit Lagi!_`)
-				else reply(m.chat, "❌ Jawaban salah", footer_text, '.tega', 'Hint', '.ytega', 'Nyerah', m)
+				else reply(m.chat, "âŒ Jawaban salah", footer_text, '.tega', 'Hint', '.ytega', 'Nyerah', m)
 				}
 			}
 			if (tebakkata[m.chat] && !isCmd && m.quoted) {
@@ -443,7 +447,7 @@ alpha.sendTextWithMentions(m.chat, caption, m)
 						}
 						else if (similarity(m.text.toLowerCase(), jawaban) >= threshold)
 						reply(`_Ya, Dikit Lagi!_`)
-						else reply("❌ Jawaban salah\n\n.teka -- _Bantuan_\n.yteka -- _Nyerah_")
+						else reply("âŒ Jawaban salah\n\n.teka -- _Bantuan_\n.yteka -- _Nyerah_")
 					}
 				}
 				if (tebakbendera[m.chat] && !isCmd && m.quoted) {
@@ -457,7 +461,7 @@ alpha.sendTextWithMentions(m.chat, caption, m)
 						}
 						else if (similarity(m.text.toLowerCase(), jawaban) >= threshold)
 						reply(`_Ya, Dikit Lagi!_`)
-						else reply("❌ Jawaban salah\n\n.tebe -- _Bantuan_\n.ytebe -- _Nyerah_")
+						else reply("âŒ Jawaban salah\n\n.tebe -- _Bantuan_\n.ytebe -- _Nyerah_")
 					}
 				}
 				if (caklontong[m.chat] && !isCmd && m.quoted) {
@@ -471,7 +475,7 @@ alpha.sendTextWithMentions(m.chat, caption, m)
 						}
 						else if (similarity(m.text.toLowerCase(), jawaban) >= threshold)
 						reply(`_Ya, Dikit Lagi!_`)
-						else reply("❌ Jawaban salah\n\n.telo -- _Bantuan_\n.ytelo -- _Nyerah_")
+						else reply("âŒ Jawaban salah\n\n.telo -- _Bantuan_\n.ytelo -- _Nyerah_")
 					}
 				}
 				if (susunkata[m.chat] && !isCmd && m.quoted) {
@@ -485,7 +489,7 @@ alpha.sendTextWithMentions(m.chat, caption, m)
 						}
 						else if (similarity(m.text.toLowerCase(), jawaban) >= threshold)
 						reply(`_Ya, Dikit Lagi!_`)
-						else reply("❌ Jawaban salah\n\n.tesuka -- _Bantuan_\n.ytesuka -- _Nyerah_")
+						else reply("âŒ Jawaban salah\n\n.tesuka -- _Bantuan_\n.ytesuka -- _Nyerah_")
 					}
 				}
 				if (tebakkalimat[m.chat] && !isCmd && m.quoted) {
@@ -499,7 +503,7 @@ alpha.sendTextWithMentions(m.chat, caption, m)
 						}
 						else if (similarity(m.text.toLowerCase(), jawaban) >= threshold)
 						reply(`_Ya, Dikit Lagi!_`)
-						else reply("❌ Jawaban salah\n\n.tekatu -- _Bantuan_\n.ytekatu -- _Nyerah_")
+						else reply("âŒ Jawaban salah\n\n.tekatu -- _Bantuan_\n.ytekatu -- _Nyerah_")
 					}
 				}
 				if (siapaaku[m.chat] && !isCmd && m.quoted) {
@@ -513,7 +517,7 @@ alpha.sendTextWithMentions(m.chat, caption, m)
 						}
 						else if (similarity(m.text.toLowerCase(), jawaban) >= threshold)
 						reply(`_Ya, Dikit Lagi!_`)
-						else reply("❌ Jawaban salah\n\n.tesi -- _Bantuan_\n.ytesi -- _Nyerah_")
+						else reply("âŒ Jawaban salah\n\n.tesi -- _Bantuan_\n.ytesi -- _Nyerah_")
 					}
 				}
 		const kontak = {
@@ -537,11 +541,11 @@ alpha.sendTextWithMentions(m.chat, caption, m)
         switch(command) {
          case 'owner':
          case 'creator': {
-            alpha.sendContact(m.chat, global.owner, m)
+            herta.sendContact(m.chat, global.owner, m)
          }
          break
          case 'menu': case 'help': case '?': {
-         	alpha.sendMessage(m.chat, {image: pp_bot, caption: require("./settings").helpMenu(pushname)}, {quoted:m})
+         	herta.sendMessage(m.chat, {image: pp_bot, caption: require("./settings").helpMenu(pushname)}, {quoted:m})
           }
           break
 			case'welcome':{
@@ -631,7 +635,7 @@ case'antilink':{
             if (!m.isGroup) return reply("Khusus grup")
             if (!(isAdmins || isCreator)) return reply("Fitur khusus admin")
    let tek = m.quoted ? quoted.text : (text ? text : "")
-            alpha.sendMessage(m.chat, {
+            herta.sendMessage(m.chat, {
                text: tek ,
                mentions: participants.map(a => a.id)
             }, {
@@ -648,7 +652,7 @@ case'antilink':{
          }
          break
          case 'donasi': case 'donate':{
-         	alpha.sendMessage(m.chat, {image: qris, caption: donasi}, {quoted:m})
+         	herta.sendMessage(m.chat, {image: qris, caption: donasi}, {quoted:m})
          }
          break
          case 'q':{
@@ -660,7 +664,7 @@ case'antilink':{
          if (!isBotAdmins) return reply("Bot Bukan Admin")
          if (!isAdmins) return reply("Fitur Ini Hanya Dapat Di Gunakan Oleh Admin")
          let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
-         await alpha.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat())).catch((err) => reply(jsonformat)())
+         await herta.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat())).catch((err) => reply(jsonformat)())
          }
          break
          case 'add': {
@@ -668,7 +672,7 @@ case'antilink':{
          if (!isBotAdmins) return reply("Bot Bukan Admin")
          if (!isAdmins) return reply("Fitur Ini Hanya Dapat Di Gunakan Oleh Admin")
          let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-         await alpha.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+         await herta.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
          }
          break
          case 'promote': {
@@ -676,14 +680,14 @@ case'antilink':{
          if (!isBotAdmins) return reply("Bot Bukan Admin")
          if (!isAdmins) return reply("Fitur Ini Hanya Dapat Di Gunakan Oleh Admin")
          let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-         await alpha.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+         await herta.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
          }
          case 'demote': {
          	if (!m.isGroup) return reply("Hanya Dapat Di Gunakan Di Group")
          if (!isBotAdmins) return reply("Bot Bukan Admin")
          if (!isAdmins) return reply("Fitur Ini Hanya Dapat Di Gunakan Oleh Admin")
          let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-         await alpha.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+         await herta.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
          }
          break
          case 'sc':
@@ -693,18 +697,18 @@ case'antilink':{
          break
          case 'tqto':
          case 'thanksto':{
-         	reply(`╭─❒ 「 THANKS TO 」 
-│○ Allah Swt.
-│○ Myparents
-│○ Hads
-│○ VinzDev
-│○ Misel
-│○ Fatih Arridho
-│○ Ferdiz
-│○ Zeeoneofc
-│○ JerOfc
-│○ All Creator Bot
-╰❒`) // MAU MAMBAHIN NAMA LU? 
+         	reply(`â•­â”€â’ ã€Œ THANKS TO ã€ 
+â”‚â—‹ Allah Swt.
+â”‚â—‹ Myparents
+â”‚â—‹ Hads
+â”‚â—‹ VinzDev
+â”‚â—‹ Misel
+â”‚â—‹ Fatih Arridho
+â”‚â—‹ Ferdiz
+â”‚â—‹ Zeeoneofc
+â”‚â—‹ JerOfc
+â”‚â—‹ All Creator Bot
+â•°â’`) // MAU MAMBAHIN NAMA LU? 
 // SILAHKAN TAPI TOLONG JANGAN HAPUS SALAH SATU NAMA DI ATAS ITU
          }
          break
@@ -712,8 +716,8 @@ case'antilink':{
          	if (!m.key.fromMe && !isCreator) return reply("Fitur Ini Hanya Dapat Di Gunakan Oleh Owner")
          if (!/image/.test(mime)) return `Kirim/Reply Image Dengan Caption ${prefix + command}`
          if (/webp/.test(mime)) return `Kirim/Reply Image Dengan Caption ${prefix + command}`
-         let media = await alpha.downloadAndSaveMediaMessage(qmsg)
-         await alpha.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media))
+         let media = await herta.downloadAndSaveMediaMessage(qmsg)
+         await herta.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media))
          }
          break
          case 'jasrun':{
@@ -726,7 +730,7 @@ case'antilink':{
          if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return reply(`Link Eror !`)
          reply("Sedang Di Proses")
          let result = args[0].split('https://chat.whatsapp.com/')[1]
-         await alpha.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+         await herta.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
          }
          break
          case "tiktoknowm":
@@ -739,7 +743,7 @@ case'antilink':{
          if (!res.ok) throw await res.text()
          var result = await res.json()
          var result = result.result 
-         alpha.sendMessage(from, {video:{url: result.nowm}, mimetype:"video/mp4", caption: `DONE`}, {quoted:m})
+         herta.sendMessage(from, {video:{url: result.nowm}, mimetype:"video/mp4", caption: `DONE`}, {quoted:m})
          }
          break
          case "tiktokaudio":{
@@ -751,7 +755,7 @@ case'antilink':{
          if (!res.ok) throw await res.text()
          var result = await res.json()
          var result = result.result 
-         alpha.sendMessage(from, {audio:{url: result.audio}, mimetype:"audio/mpeg", caption: `DONE`}, {quoted:m})
+         herta.sendMessage(from, {audio:{url: result.audio}, mimetype:"audio/mpeg", caption: `DONE`}, {quoted:m})
          }
          break
          case 'tiktokaudio2':{
@@ -759,7 +763,7 @@ case'antilink':{
          if (!args[0]) return reply(`Kirim perintah:\n${prefix+command} link tiktok video\n\nContoh penggunaan:\n${prefix+command} https://vt.tiktok.com/ZS8bq76jP/`)
          reply("Sedang Di Proses")
          require('./lib/tiktok').Tiktok(q).then( data => {
-         	alpha.sendMessage(m.chat, { audio: { url: data.audio }, mimetype: 'audio/mp4' }, { quoted: m })
+         	herta.sendMessage(m.chat, { audio: { url: data.audio }, mimetype: 'audio/mp4' }, { quoted: m })
          })
          }
          break
@@ -772,7 +776,7 @@ case'antilink':{
          if (!res.ok) throw await res.text()
          var result = await res.json()
          var result = result.result 
-         alpha.sendMessage(from, {audio:{url: result.audio}, mimetype:"audio/mpeg", ptt:true, caption: `DONE`}, {quoted:m})
+         herta.sendMessage(from, {audio:{url: result.audio}, mimetype:"audio/mpeg", ptt:true, caption: `DONE`}, {quoted:m})
          }
          break
          case "patrick":
@@ -800,7 +804,7 @@ case'antilink':{
          let res = await fetch(global.api('alfa', '/api/telegram-sticker/' + command, {}, 'apikey'))
          if (!res.ok) throw await res.text()
          let img = await res.buffer()
-         let savestik = await alpha.sendImageAsSticker(m.chat, img, m, {
+         let savestik = await herta.sendImageAsSticker(m.chat, img, m, {
          	packname: packname,
          author: author
          })
@@ -814,7 +818,7 @@ case'antilink':{
          let res = await fetch(global.api('alfa', '/api/canvas/' + command, {text: text}, 'apikey'))
          if (!res.ok) throw await res.text()
          let img = await res.buffer()
-         let encmedia = await alpha.sendMediaAsSticker(m.chat, img, m, {
+         let encmedia = await herta.sendMediaAsSticker(m.chat, img, m, {
          	packname: global.packname,
          author: author
          })
@@ -825,8 +829,8 @@ case'antilink':{
          	if (!m.isGroup) throw reply(`Fitur Ini Khusus Group`)
          if (!isBotAdmins) throw reply(`Bot Bukan Admin`)
          reply("Sedang Di Proses")
-         let response = await alpha.groupInviteCode(m.chat)
-         alpha.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\nGroup Link : ${groupMetadata.subject}`, m, { detectLink: true })
+         let response = await herta.groupInviteCode(m.chat)
+         herta.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\nGroup Link : ${groupMetadata.subject}`, m, { detectLink: true })
          reply("Itu Link Group Nya Kak")
          }
          break
@@ -839,7 +843,7 @@ case'antilink':{
          if (!isBotAdmins) throw reply(`Bot Bukan Admin`)
          if (!isAdmins && !isCreator) return reply(`Fitur Ini Khusus Admin !`)
          reply("Sedang Di Proses")
-         alpha.groupRevokeInvite(m.chat)
+         herta.groupRevokeInvite(m.chat)
          reply(`Done Reset Link Gc Nya Kak`)
          }
          break
@@ -847,8 +851,8 @@ case'antilink':{
          	if (!m.quoted) throw false
          let { chat, fromMe, id, isBaileys } = m.quoted
          if (!isBaileys) return 'Pesan Itu Bukan Di kirim Oleh Bot'
-         alpha.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
-         reply("Sukses Delete Pesan ✅")
+         herta.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
+         reply("Sukses Delete Pesan âœ…")
          }
          break
          case 'kosong':{
@@ -916,27 +920,27 @@ case'antilink':{
          case 'out':{
          	if (!m.isGroup) throw reply(`Fitur Ini Khusus Group`)
          	if (!isCreator) return reply(`Fitur Ini Khusus Owner`)
-         await alpha.groupLeave(m.chat).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+         await herta.groupLeave(m.chat).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
          }
          break
          case 'listonline': case 'onlinelist':{
          	if (global.premium && !isCreator) return reply (`Fitur Ini Khusus Member Premium, Jika Mau Buy Premium Ketik .Buyprem`)
          	let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
          let online = [...Object.keys(store.presences[id]), botNumber]
-         alpha.sendText(m.chat, 'List Online:\n\n' + online.map(v => '⭔ @' + v.replace(/@.+/, '')).join`\n`, m, {
+         herta.sendText(m.chat, 'List Online:\n\n' + online.map(v => 'â­” @' + v.replace(/@.+/, '')).join`\n`, m, {
          	mentions: online
          })
          }
          break
          case 'public':{
          	if (!isCreator) return (`Fitur Ini Khusus Owner`)
-         alpha.public = true
+         herta.public = true
          reply('*Sukses Ganti Bot Ke Mode Public*')
          }
          break
          case 'self':{
          	if (!isCreator) return (`Fitur Ini Khusus Owner`)
-         alpha.public = false 
+         herta.public = false 
          reply('*Sukses Ganti Bot Ke mode Self, Jika Mau Ganti Bot  Ke Mode Public Silahkan Ke Nomor Bot Ketik .public*')
          }
          break
@@ -946,7 +950,7 @@ case'antilink':{
          var but = [{ buttonId: `grubbot`, buttonText: { displayText: `GROUP BOT` }, type: 1 }]
          var kayes = JSON.parse(fs.readFileSync('./RANDOM/kayes.json'))
          var hasil = pickRandom(kayes)
-         alpha.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
+         herta.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
          }
          break
          case 'tiktokgirl':{
@@ -954,7 +958,7 @@ case'antilink':{
          reply("Sedang Di Proses")
          var asupan = JSON.parse(fs.readFileSync('./RANDOM/tiktokgirl.json'))
          var hasil = pickRandom(asupan)
-         alpha.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
+         herta.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
          }
          break
          case 'tiktokghea':{
@@ -962,7 +966,7 @@ case'antilink':{
          	reply("Sedang Di Proses")
          var gheayubi = JSON.parse(fs.readFileSync('./RANDOM/gheayubi.json'))
          var hasil = pickRandom(gheayubi)
-         alpha.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
+         herta.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
          }
          break
          case 'tiktokbocil':{
@@ -970,7 +974,7 @@ case'antilink':{
          	reply("Sedang Di Proses")
          var bocil = JSON.parse(fs.readFileSync('./RANDOM/bocil.json'))
          var hasil = pickRandom(bocil)
-         alpha.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
+         herta.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
          }
          break
          case 'tiktokukhty':{
@@ -978,7 +982,7 @@ case'antilink':{
          	reply("Sedang Di Proses")
          var ukhty = JSON.parse(fs.readFileSync('./RANDOM/ukhty.json'))
          var hasil = pickRandom(ukhty)
-         alpha.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
+         herta.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
          }
          break
          case 'tiktoksantuy':{
@@ -986,7 +990,7 @@ case'antilink':{
          	reply("Sedang Di Proses")
          var santuy = JSON.parse(fs.readFileSync('./RANDOM/santuy.json'))
          var hasil = pickRandom(santuy)
-         alpha.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
+         herta.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
          }
          break
          case 'tiktokpanrika':{
@@ -994,7 +998,7 @@ case'antilink':{
          	reply("Sedang Di Proses")
          var rikagusriani = JSON.parse(fs.readFileSync('./RANDOM/panrika.json'))
          var hasil = pickRandom(rikagusriani)
-         alpha.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
+         herta.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
          }
          break
          case 'tiktoknotnot':{
@@ -1002,7 +1006,7 @@ case'antilink':{
          reply("Sedang Di Proses")
          var notnot = JSON.parse(fs.readFileSync('./RANDOM/notnot.json'))
          var hasil = pickRandom(notnot)
-         alpha.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
+         herta.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
          }
          break
          case 'tiktokgabagtha':{
@@ -1010,19 +1014,19 @@ case'antilink':{
          	reply("Sedang Di Proses")
          var gabagtha = JSON.parse(fs.readFileSync('./RANDOM/tiktokgabagtha.json'))
          var hasil = pickRandom(gabagtha)
-         alpha.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
+         herta.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
          }
          break
          case 'block':{
          	if (!isCreator) return reply(`Fitur Ini Khusus Owner`)
          let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-         await alpha.updateBlockStatus(users, 'block').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+         await herta.updateBlockStatus(users, 'block').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
          }
          break
          case 'unblock':{
          	if (!isCreator) return reply(`Fitur Ini Khusus Owner`)
          let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-         await alpha.updateBlockStatus(users, 'unblock').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+         await herta.updateBlockStatus(users, 'unblock').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
          }
          break
          case 'setnamegc':
@@ -1031,7 +1035,7 @@ case'antilink':{
          if (!isBotAdmins) return(`Bot Bukan Admin`)
          if (!isAdmins) return(`Fitur Ini Khusus Admin !`)
          if (!text) throw 'Text Nya ?'
-         await alpha.groupUpdateSubject(m.chat, text).then((res) => reply(mess.success)).catch((err) => reply(jsonformat(err)))
+         await herta.groupUpdateSubject(m.chat, text).then((res) => reply(mess.success)).catch((err) => reply(jsonformat(err)))
          }
          break
          case 'setdesc': case 'setdesk':{
@@ -1039,7 +1043,7 @@ case'antilink':{
          if (!isBotAdmins) return(`Bot Bukan Admin`)
          if (!isAdmins) return(`Fitur Ini Khusus Admin !`)
          if (!text) throw 'Text Nya ?'
-         await alpha.groupUpdateDescription(m.chat, text).then((res) => reply(mess.success)).catch((err) => reply(jsonformat(err)))
+         await herta.groupUpdateDescription(m.chat, text).then((res) => reply(mess.success)).catch((err) => reply(jsonformat(err)))
          }
          break
          case 'gitclone':{
@@ -1050,11 +1054,11 @@ case'antilink':{
          repo = repo.replace(/.git$/, '')
          let url = `https://api.github.com/repos/${user}/${repo}/zipball`
          let filename = (await fetch(url, {method: 'HEAD'})).headers.get('content-disposition').match(/attachment; filename=(.*)/)[1]
-         alpha.sendMessage(m.chat, { document: { url: url }, fileName: filename+'.zip', mimetype: 'application/zip' }, { quoted: m }).catch((err) => reply("Sukses"))
+         herta.sendMessage(m.chat, { document: { url: url }, fileName: filename+'.zip', mimetype: 'application/zip' }, { quoted: m }).catch((err) => reply("Sukses"))
          }
          break
          case 'developer': case 'dev': {
-         	reply(`JER-BOT DEVELOPER\n\n\n©2021-2023 JER-BOTZ MD.\n\nWhatshapp\nJER: wa.me/6281315252010`)
+         	reply(`JER-BOT DEVELOPER\n\n\nÂ©2021-2023 JER-BOTZ MD.\n\nWhatshapp\nJER: wa.me/6281315252010`)
          }
          break
 case 'delprem':
@@ -1064,7 +1068,7 @@ case 'delprem':
          case 'delpremium': {
 
             if (!isCreator) return (`Emank Lu Owner Gua Kah ?`)
-            if (!text) return reply(`*Kek gini bang*\n\n• ${prefix + command} number\n*Contoh:* ${prefix + command} 62887435047326\n\natau\n\n• ${prefix + command} @tag\n*Contoh:* ${prefix + command} @62887435047326`)
+            if (!text) return reply(`*Kek gini bang*\n\nâ€¢ ${prefix + command} number\n*Contoh:* ${prefix + command} 62887435047326\n\natau\n\nâ€¢ ${prefix + command} @tag\n*Contoh:* ${prefix + command} @62887435047326`)
 
             let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
 
@@ -1078,7 +1082,7 @@ case 'delprem':
 
             } else {
 
-               var cekpr = await alpha.onWhatsApp(args[0] + "@s.whatsapp.net")
+               var cekpr = await herta.onWhatsApp(args[0] + "@s.whatsapp.net")
 
                if (cekpr.length == 0) return reply(`Nomor ${args[0]} tidak terdaftar di WhatsApp`)
 
@@ -1114,7 +1118,7 @@ case 'delprem':
 
             } else {
 
-               var cekap = await alpha.onWhatsApp(pcknm + "@s.whatsapp.net")
+               var cekap = await herta.onWhatsApp(pcknm + "@s.whatsapp.net")
 
                if (cekap.length == 0) return reply(`Nomor ${pcknm} tidak terdaftar di WhatsApp`)
 
@@ -1135,31 +1139,31 @@ case 'delprem':
 
                men.push(i.id)
 
-               txt += `*🆔 ID:* @${i.id.split("@")[0]}\n`
+               txt += `*ðŸ†” ID:* @${i.id.split("@")[0]}\n`
 
                if (i.expired === 'PERMANENT') {
 
                   let cekvip = 'PERMANENT'
 
-                  txt += `*⏰ Expired:* PERMANENT\n\n`
+                  txt += `*â° Expired:* PERMANENT\n\n`
 
                } else {
 
                   let cekvip = i.expired - Date.now()
 
-                  txt += `*⏰ Expired:* ${msToDate(cekvip)}`
+                  txt += `*â° Expired:* ${msToDate(cekvip)}`
 
                }
 
             }
 
-            alpha.sendMessage(m.chat, { text: `「 *PREMIUM USER LIST* 」\n\n*👑 Total Premium : ${premium.length} user*\n\n${txt}` }, { mentions: men, quoted: m })
+            herta.sendMessage(m.chat, { text: `ã€Œ *PREMIUM USER LIST* ã€\n\n*ðŸ‘‘ Total Premium : ${premium.length} user*\n\n${txt}` }, { mentions: men, quoted: m })
 
          }
 
          break
          case 'buyprem':{
-         	alpha.sendContact(m.chat, global.owner,), reply(`Buy Premium Chat Owner`)
+         	herta.sendContact(m.chat, global.owner,), reply(`Buy Premium Chat Owner`)
          }
          break
          case'antiwame2':{
@@ -1206,7 +1210,7 @@ case'antilink2':{
 					reply(grubbot)
 					}
 						break
-						case 'spotify':{ //credit: Ray Senpaiâ¤ï¸ https://github.com/EternityBots/Nezuko
+						case 'spotify':{ //credit: Ray SenpaiÃ¢ÂÂ¤Ã¯Â¸Â https://github.com/EternityBots/Nezuko
 						if (global.premium && !isCreator) return reply (`Fitur Ini Khusus Member Premium, Jika Mau Buy Premium Ketik .Buyprem`)
 						if (!text) return reply(`Mana Link Nya ?`)
 						const Spotify = require('./lib/spotify')
@@ -1217,9 +1221,9 @@ case'antilink2':{
 						const details = `*Title:* ${name || ''}\n*Artists:* ${(artists || []).join(
 						','
 						)}\n*Album:* ${album_name}\n*Release Date:* ${release_date || ''}`
-						const response = await alpha.sendMessage(m.chat, { image: { url: cover_url }, caption: details }, { quoted: m })
+						const response = await herta.sendMessage(m.chat, { image: { url: cover_url }, caption: details }, { quoted: m })
 						const bufferpotify = await spotify.download()
-						await alpha.sendMessage(m.chat, { audio: bufferpotify }, { quoted: response })
+						await herta.sendMessage(m.chat, { audio: bufferpotify }, { quoted: response })
 					}
 					break
 					case 'yts': case 'ytsearch': {
@@ -1233,7 +1237,7 @@ case'antilink2':{
 						for (let i of search.all) {
 							teks += `No : ${no++}\nType : ${i.type}\nVideo ID : ${i.videoId}\nTitle : ${i.title}\nViews : ${i.views}\nDuration : ${i.timestamp}\nUploaded : ${i.ago}\nUrl : ${i.url}\n\n`
 							}
-						alpha.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
+						herta.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
 					}
 					break
 					case 'google': {
@@ -1261,7 +1265,7 @@ case'antilink2':{
 					if (pesan.length < 1) return reply(`Semua Nya Harus Di Isi ! contoh : menfess 62xxxxxxxxxx|someone|hello KakaAll must be filled in! eg : confess 62xxxxxxxxxx|from|hello dude`)
 					let teksnya = `Hi Kak Ada Menfess Nih\n\nFrom :  _${saking}_  \nMessage : _${pesan}_ `
 					gambar = `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMkjAJhYezm4h6k1AJ6qfreGkaRdBcR7UHMw&usqp=CAU`
-					alpha.sendMessage(`${nomor}@s.whatsapp.net`, { caption: teksnya, image: {url: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMkjAJhYezm4h6k1AJ6qfreGkaRdBcR7UHMw&usqp=CAU`}, footer: namabot })
+					herta.sendMessage(`${nomor}@s.whatsapp.net`, { caption: teksnya, image: {url: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMkjAJhYezm4h6k1AJ6qfreGkaRdBcR7UHMw&usqp=CAU`}, footer: namabot })
 					reply(`Sukses Kirim Menfess !!`)
 					}
 						break
@@ -1278,13 +1282,13 @@ case'antilink2':{
 								ntilinkall.push(from)
 								fs.writeFileSync('./database/antilinkall.json', JSON.stringify(ntilinkall))
 								reply('Success in turning on all antilink in this group')
-								var groupe = await alpha.groupMetadata(from)
+								var groupe = await herta.groupMetadata(from)
 								var members = groupe['participants']
 								var mems = []
 								members.map(async adm => {
 									mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 									})
-									alpha.sendMessage(from, {text: `\`\`\`ã€Œ âš ï¸Warningâš ï¸ ã€\`\`\`\n\nIf you're not an admin, don't send any link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+									herta.sendMessage(from, {text: `\`\`\`Ã£â‚¬Å’ Ã¢Å¡Â Ã¯Â¸ÂWarningÃ¢Å¡Â Ã¯Â¸Â Ã£â‚¬Â\`\`\`\n\nIf you're not an admin, don't send any link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 									} else if (args[0] === "off") {
 										if (!AntiLinkAll) return reply('Already deactivated')
 										let off = ntilinkall.indexOf(from)
@@ -1302,8 +1306,8 @@ case 'ytmp3': case 'ytaudio': {
 	let quality = args[1] ? args[1] : '128kbps'
 	let media = await yta(text, quality)
 	if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
-	alpha.sendImage(m.chat, media.thumb, ` Title : ${media.title}\n File Size : ${media.filesizeF}\n Url : ${isUrl(text)}\n Ext : MP3\n Resolusi : ${args[1] || '128kbps'}`, m)
-	alpha.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
+	herta.sendImage(m.chat, media.thumb, ` Title : ${media.title}\n File Size : ${media.filesizeF}\n Url : ${isUrl(text)}\n Ext : MP3\n Resolusi : ${args[1] || '128kbps'}`, m)
+	herta.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
 }
 break
 case 'ytmp4': case 'ytvideo': {
@@ -1312,7 +1316,7 @@ case 'ytmp4': case 'ytvideo': {
 	let quality = args[1] ? args[1] : '360p'
 	let media = await ytv(text, quality)
 	if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
-	alpha.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: ` Title : ${media.title}\n File Size : ${media.filesizeF}\n Url : ${isUrl(text)}\n Ext : MP3\n Resolusi : ${args[1] || '360p'}` }, { quoted: m })
+	herta.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: ` Title : ${media.title}\n File Size : ${media.filesizeF}\n Url : ${isUrl(text)}\n Ext : MP3\n Resolusi : ${args[1] || '360p'}` }, { quoted: m })
 	}
 	break
 case 'pinterest':{
@@ -1321,7 +1325,7 @@ case 'pinterest':{
 	let { pinterest } = require('./lib/scraper')
 	anu = await pinterest(text)
 	result = anu[Math.floor(Math.random(), anu.length)]
-	alpha.sendMessage(m.chat, { image: { url: result }, caption: `Media Url : `+result }, { quoted: m })
+	herta.sendMessage(m.chat, { image: { url: result }, caption: `Media Url : `+result }, { quoted: m })
 	}
 break
 case 'bctext': case 'broadcasttext': case 'broadcast':
@@ -1329,7 +1333,7 @@ if (!isCreator) return reply("Fitur khusus owner!")
 if (!text) throw `Mana Text Nya ?`
 var data = await store.chats.all()
 for (let i of data) {
-	alpha.sendMessage(i.id, {text: `${namaowner}'s Broadcast\n\nMessage : ${q}` })
+	herta.sendMessage(i.id, {text: `${namaowner}'s Broadcast\n\nMessage : ${q}` })
 	await sleep(1000)
 	}
 	break
@@ -1338,13 +1342,13 @@ case 'toimage': case 'toimg': {
 	if (!quoted) throw 'Reply image'
 	if (!/webp/.test(mime)) throw `Reply sticker with caption *${prefix + command}*`
 	reply("Sedang Di Proses")
-	let media = await alpha.downloadAndSaveMediaMessage(quoted)
+	let media = await herta.downloadAndSaveMediaMessage(quoted)
 	let ran = await getRandom('.png')
 	exec(`ffmpeg -i ${media} ${ran}`, (err) => {
 		fs.unlinkSync(media)
 		if (err) throw err
 		let bufferimg13x = fs.readFileSync(ran)
-		alpha.sendMessage(m.chat, { image: bufferimg13x }, { quoted: m })
+		herta.sendMessage(m.chat, { image: bufferimg13x }, { quoted: m })
 		fs.unlinkSync(ran)
 		})
 		}
@@ -1355,12 +1359,12 @@ case 'sticker': case 's': case 'stickergif': case 'sgif': case 'stiker':{
 	if (/image/.test(mime)) {
 		reply("Sedang Di Proses")
 		let media = await quoted.download()
-		let encmedia = await alpha.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+		let encmedia = await herta.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 		await fs.unlinkSync(encmedia)
 		} else if (/video/.test(mime)) {
 			if ((quoted.msg || quoted).seconds > 11) return reply('*Maximum 10 seconds!*')
 			let media = await quoted.download()
-			let encmedia = await alpha.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+			let encmedia = await herta.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 			await fs.unlinkSync(encmedia)
 			} else {
 				reply(`Kirim/reply gambar/video/gif dengan caption ${prefix + command}\nDurasi Video/Gif 1-9 Detik`)
@@ -1368,14 +1372,14 @@ case 'sticker': case 's': case 'stickergif': case 'sgif': case 'stiker':{
 				}
 				break
 				case 'setnamabot': case 'setnamebot': {
-					if (!text) throw `Contoh : ${prefix + command} WhatsApp ✅`
-					let name = await alpha.updateProfileName(text)
+					if (!text) throw `Contoh : ${prefix + command} WhatsApp âœ…`
+					let name = await herta.updateProfileName(text)
 					reply(`Successfully renamed bot to ${name}`)
 					}
 					break
 case 'setstatus': case 'setbiobot': case 'setbotbio': {
 	if (!text) throw `this is a WhatsApp Bot named JerOfc`
-	let name = await alpha.updateProfileStatus(text)
+	let name = await herta.updateProfileStatus(text)
 	reply(`Successfully changed bot bio status to ${name}`)
 	}
 	break
@@ -1387,8 +1391,8 @@ case 'play': case 'ytplay':{
 	let search = await yts(text)
 	let anulay = search.videos[Math.floor(Math.random() * search.videos.length)]
 	let buttons = [
-		{buttonId: `.ytmp3 ${anulay.url}`, buttonText: {displayText: '♫ Audio'}, type: 1},
-		{buttonId: `.ytmp4 ${anulay.url}`, buttonText: {displayText: '► Video'}, type: 1}
+		{buttonId: `.ytmp3 ${anulay.url}`, buttonText: {displayText: 'â™« Audio'}, type: 1},
+		{buttonId: `.ytmp4 ${anulay.url}`, buttonText: {displayText: 'â–º Video'}, type: 1}
 		]
 		let buttonMessage = {
 	image: { url: anulay.thumbnail },
@@ -1407,7 +1411,7 @@ footer: namabot,
 buttons: buttons,
 headerType: 4
 }
-alpha.sendMessage(m.chat, buttonMessage, { quoted: m })
+herta.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 break
 case 'smeme': case 'stickmeme': case 'stikmeme': case 'stickermeme': case 'stikermeme': {
@@ -1417,31 +1421,31 @@ case 'smeme': case 'stickmeme': case 'stikmeme': case 'stickermeme': case 'stike
 	if (text.includes('|')) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
 	if (!/image/.test(mime)) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
 	reply("Sedang Di Proses")
-	mee = await alpha.downloadAndSaveMediaMessage(quoted)
+	mee = await herta.downloadAndSaveMediaMessage(quoted)
 	mem = await TelegraPh(mee)
 	meme = `https://api.memegen.link/images/custom/-/${text}.png?background=${mem}`
-	memek = await alpha.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author })
+	memek = await herta.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author })
 	await fs.unlinkSync(memek)
 	}
 	break
 case 'emojimix': {
 	if (global.premium && !isCreator) return reply (`Fitur Ini Khusus Member Premium, Jika Mau Buy Premium Ketik .Buyprem`)
 	let [emoji1, emoji2] = text.split`+`
-	if (!emoji1) throw `Contoh : ${prefix + command} 😅+🤔`
-	if (!emoji2) throw `Contoh : ${prefix + command} 😅+🤔`
+	if (!emoji1) throw `Contoh : ${prefix + command} ðŸ˜…+ðŸ¤”`
+	if (!emoji2) throw `Contoh : ${prefix + command} ðŸ˜…+ðŸ¤”`
 	let anumojimix = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
 	for (let res of anumojimix.results) {
-		let encmedia = await alpha.sendImageAsSticker(m.chat, res.url, m, { packname: global.packname, author: global.author, categories: res.tags })
+		let encmedia = await herta.sendImageAsSticker(m.chat, res.url, m, { packname: global.packname, author: global.author, categories: res.tags })
 		await fs.unlinkSync(encmedia)
 		}
 		}
 		break
 		case 'emojimix2': {
 			if (global.premium && !isCreator) return reply (`Fitur Ini Khusus Member Premium, Jika Mau Buy Premium Ketik .Buyprem`)
-			if (!text) throw `Contoh : ${prefix + command} 😅`
+			if (!text) throw `Contoh : ${prefix + command} ðŸ˜…`
 			let anumix2 = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(text)}`)
 			for (let res of anumix2.results) {
-				let encmedia= await alpha.sendImageAsSticker(m.chat, res.url, m, { packname: global.packname, author: global.author, categories: res.tags })
+				let encmedia= await herta.sendImageAsSticker(m.chat, res.url, m, { packname: global.packname, author: global.author, categories: res.tags })
 				await fs.unlinkSync(encmedia)
 				}
 				}
@@ -1453,7 +1457,7 @@ case 'assalamualaikum':{
 case 'broadcastvid': case 'bcimage': case 'broadcastvideo': case 'broadcastvid':{
 if (!isCreator) return reply("Fitur khusus owner!")
 if (!text) throw `Mana Text Nya ?`
-let getGroups = await alpha.groupFetchAllParticipating()
+let getGroups = await herta.groupFetchAllParticipating()
 let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
 let xeoncast = groups.map(v => v.id)
 reply(` Broadcasting in ${xeoncast.length} Group Chat, in ${xeoncast.length * 1.5} seconds`)
@@ -1461,11 +1465,11 @@ for (let i of xeoncast) {
 	let txt = `${namaowner}'s Broadcast\n\nMessage : ${text}`
 	if(/image/.test(mime)) {
 		let media = await quoted.download()
-		await alpha.sendMessage(i, { image:media,  caption: txt,mentions:participants.map(a => a.id) })
+		await herta.sendMessage(i, { image:media,  caption: txt,mentions:participants.map(a => a.id) })
 		}
 		if(/video/.test(mime)){
 			let media = await quoted.download()
-			await alpha.sendMessage(i, { video:media,  caption: txt, mentions:participants.map(a => a.id) })
+			await herta.sendMessage(i, { video:media,  caption: txt, mentions:participants.map(a => a.id) })
 			}
 			}
 			reply(`Sukses Broadcast in ${xeoncast.length} Groups`)      
@@ -1475,13 +1479,13 @@ case 'tagall': {
 	if (!m.isGroup) return reply('Fitur Khusus Group!')
 	if (!isAdmins) return reply('Fitur Khusus admin!')
 	if (!isBotAdmins) return reply('Bot Bukan Admin Cuy')
-	let teks = `╚» Tag All «╝ 
+	let teks = `â•šÂ» Tag All Â«â• 
 	
-🌿 *Message : ${q ? q : 'empty'}*\n\n`
+ðŸŒ¿ *Message : ${q ? q : 'empty'}*\n\n`
 	for (let mem of participants) {
 		teks += `@${mem.id.split('@')[0]}\n`
 		}
-		alpha.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
+		herta.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
 		}
 		break
 case 'mediafire': {
@@ -1497,7 +1501,7 @@ case 'mediafire': {
 *Mime* : ${baby1[0].mime}
 *Link* : ${baby1[0].link}`
 reply(`${result4}`)
-alpha.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1[0].nama, mimetype: baby1[0].mime }, { quoted : m }).catch ((err) => reply(mess.error))
+herta.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1[0].nama, mimetype: baby1[0].mime }, { quoted : m }).catch ((err) => reply(mess.error))
 }
 break
 case 'igphoto':
@@ -1515,7 +1519,7 @@ case "igdl":{
 	var result = await res.json()
 	var result = result.result
 	for(let i of result.url){
-		alpha.sendFile(m.chat, i, 'ig.jpg', `DONE ✅`, m)
+		herta.sendFile(m.chat, i, 'ig.jpg', `DONE âœ…`, m)
 		}
 		}
 		case 'igvideo':
@@ -1535,7 +1539,7 @@ case "igdl":{
 			var result = await res.json()
 			var result = result.result
 			for(let i of result.url){
-				alpha.sendFile(m.chat, i, 'ig.mp4', `DONE ✅`, m)
+				herta.sendFile(m.chat, i, 'ig.mp4', `DONE âœ…`, m)
 				}
 				}
 				break
@@ -1555,11 +1559,11 @@ case "igdl":{
 					let res = await fetch(global.api('alfa', '/api/cecan/' + command, {}, 'apikey'))
 					if (!res.ok) throw await res.text()
 					let img = await res.buffer()
-					alpha.sendFile(m.chat, img, 'cecan.jpg', `CANTIK KAN BANG ISTRI KITA ?`, m)
+					herta.sendFile(m.chat, img, 'cecan.jpg', `CANTIK KAN BANG ISTRI KITA ?`, m)
 				}
 				break
 				case "tebakgambar":{
-					if (tebakgambar[m.chat]) return alpha.sendMessage(m.chat, {
+					if (tebakgambar[m.chat]) return herta.sendMessage(m.chat, {
 					text: "Soal ini belum selesai"
 					}, {
 						quoted: tebakgambar[m.chat][0]
@@ -1569,11 +1573,11 @@ case "igdl":{
 					var result = await res.json()
 					console.log("Jawaban: " + result.jawaban)
 					tebakgambar[m.chat] = [
-					await alpha.sendMessage(m.chat, {image:{url: result.img}, caption: `Silahkan Jawab Soal Di Atas Ini\n\nDeskripsi : ${result.deskripsi}\nWaktu : ${(120000 / 1000).toFixed(2)} detik`},{quoted: m}
+					await herta.sendMessage(m.chat, {image:{url: result.img}, caption: `Silahkan Jawab Soal Di Atas Ini\n\nDeskripsi : ${result.deskripsi}\nWaktu : ${(120000 / 1000).toFixed(2)} detik`},{quoted: m}
 					), result, 4999,
 					setTimeout(() => {
 						if (tebakgambar[m.chat]) {
-							alpha.sendButtonText(m.chat, [{
+							herta.sendButtonText(m.chat, [{
 								buttonId: '.tebakgambar',
 								buttonText: {
 									displayText: "Tebak Gambar"
@@ -1589,17 +1593,17 @@ case "igdl":{
 				case 'tega': {
 					if (!(m.chat in tebakgambar)) return
 					let json = tebakgambar[m.chat][1]
-					alpha.send1ButMes(m.chat, '```' + json.jawaban.replace(/[bcdfghjklmnpqrstvwxyz]/ig, '_') + '```', '� ' + reply, '.ytega', 'Dahlah Nyerah Aja', m)
+					herta.send1ButMes(m.chat, '```' + json.jawaban.replace(/[bcdfghjklmnpqrstvwxyz]/ig, '_') + '```', 'ï¿½ ' + reply, '.ytega', 'Dahlah Nyerah Aja', m)
 				}
 				case 'ytega': {
 					if (!(m.chat in tebakgambar)) return
 					clearTimeout(tebakgambar[m.chat][3])
 					delete tebakgambar[m.chat]
-					return alpha.send1ButMes(m.chat, 'Payah lu, gitu aja nyerah', footer_text, '.tebakgambar', 'Soal baru', m)
+					return herta.send1ButMes(m.chat, 'Payah lu, gitu aja nyerah', footer_text, '.tebakgambar', 'Soal baru', m)
 				}
 				break
 				case "tebakkata":{
-					if (tebakkata[m.chat]) return alpha.sendMessage(m.chat, {
+					if (tebakkata[m.chat]) return herta.sendMessage(m.chat, {
 						text: "Soal ini belum selesai"
 						}, {
 							quoted: tebakkata[m.chat][0]
@@ -1610,7 +1614,7 @@ case "igdl":{
 							var result = result.result
 							console.log("Jawaban: " + result.jawaban)
 							tebakkata[m.chat] = [
-							await alpha.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik`, m), result, 4999,
+							await herta.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik`, m), result, 4999,
 							setTimeout(() => {
 								if (tebakkata[m.chat]) {
 									reply(waktuHabis(result.jawaban) + "\n\nkirim perintah .tebakkata untuk bermain lagi!")
@@ -1634,7 +1638,7 @@ case "igdl":{
 						}
 						break
 						case "tebakbendera": {
-							if (tebakbendera[m.chat]) return alpha.sendMessage(m.chat, {
+							if (tebakbendera[m.chat]) return herta.sendMessage(m.chat, {
 								text: "Soal ini belum selesai"
 								}, {
 									quoted: tebakbendera[m.chat][0]
@@ -1645,7 +1649,7 @@ case "igdl":{
 									var result = result.result
 									console.log("Jawaban: " + result.name)
 									tebakbendera[m.chat] = [
-									await alpha.sendMessage(m.chat, {
+									await herta.sendMessage(m.chat, {
 										image: {
 											url: result.img
 											},
@@ -1677,7 +1681,7 @@ case "igdl":{
 						}
 						break
 case 'caklontong': { 
-	if (caklontong[m.chat]) return alpha.sendMessage(m.chat, {
+	if (caklontong[m.chat]) return herta.sendMessage(m.chat, {
 		text: "Soal ini belum selesai"
 		}, {
 			quoted: caklontong[m.chat][0]
@@ -1688,7 +1692,7 @@ case 'caklontong': {
 			var result = result.result
 			console.log("Jawaban: " + result.jawaban)
 			caklontong[m.chat] = [
-			await alpha.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik`, m), result, 4999,
+			await herta.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik`, m), result, 4999,
 			setTimeout(() => {
 				if (caklontong[m.chat]) {
 					reply(waktuHabis(result.jawaban + '\n' + result.deskripsi) + "\n\nkirim perintah .caklontong untuk bermain lagi!")
@@ -1708,11 +1712,11 @@ case 'caklontong': {
 				if (!(m.chat in caklontong)) return
 				clearTimeout(caklontong[m.chat][3])
 				delete caklontong[m.chat]
-				return alpha.send1ButMes(m.chat, 'Payah lu, gitu aja nyerah', footer_text, '.caklontong', 'Soal baru', m)
+				return herta.send1ButMes(m.chat, 'Payah lu, gitu aja nyerah', footer_text, '.caklontong', 'Soal baru', m)
 			}
 			break
 			case 'susunkata': {
-				if (susunkata[m.chat]) return alpha.sendMessage(m.chat, {
+				if (susunkata[m.chat]) return herta.sendMessage(m.chat, {
 					text: "Soal ini belum selesai"
 					}, {
 						quoted: susunkata[m.chat][0]
@@ -1723,7 +1727,7 @@ case 'caklontong': {
 						var result = result.result
 						console.log("Jawaban: " + result.jawaban)
 						susunkata[m.chat] = [
-						await alpha.sendText(m.chat, `*Jawablah Pertanyaan Berikut :*\nSoal : ${result.soal}\nTipe : ${result.tipe}\nWaktu : ${(120000 / 1000).toFixed(2)} detik`, m), result, 4999,
+						await herta.sendText(m.chat, `*Jawablah Pertanyaan Berikut :*\nSoal : ${result.soal}\nTipe : ${result.tipe}\nWaktu : ${(120000 / 1000).toFixed(2)} detik`, m), result, 4999,
 						setTimeout(() => {
 							if (susunkata[m.chat]) {
 								reply(waktuHabis(result.jawaban) + "\n\nkirim perintah .susunkata untuk bermain lagi!")
@@ -1747,7 +1751,7 @@ case 'caklontong': {
 					}
 					break
 					case 'tebakkalimat': {
-						if (tebakkalimat[m.chat]) return alpha.sendMessage(m.chat, {
+						if (tebakkalimat[m.chat]) return herta.sendMessage(m.chat, {
 							text: "Soal ini belum selesai"
 							}, {
 								quoted: tebakkalimat[m.chat][0]
@@ -1758,7 +1762,7 @@ case 'caklontong': {
 								var result = result.result
 								console.log("Jawaban: " + result.jawaban)
 								tebakkalimat[m.chat] = [
-								await alpha.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik`, m), result, 4999,
+								await herta.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik`, m), result, 4999,
 								setTimeout(() => {
 									if (tebakkalimat[m.chat]) {
 										reply(waktuHabis(result.jawaban) + "\n\nkirim perintah .tebakkalimat untuk bermain lagi!")
@@ -1781,7 +1785,7 @@ case 'caklontong': {
 								return reply(m.chat, 'Payah lu, gitu aja nyerah', footer_text, '.tebakkalimat', 'Soal baru', m)
 							}
 							case 'tebaksiapa': {
-								if (siapaaku[m.chat]) return alpha.sendMessage(m.chat, {
+								if (siapaaku[m.chat]) return herta.sendMessage(m.chat, {
 									text: "Soal ini belum selesai"
 									}, {
 										quoted: siapaaku[m.chat][0]
@@ -1792,7 +1796,7 @@ case 'caklontong': {
 										var result = result.result
 										console.log("Jawaban: " + result.jawaban)
 										siapaaku[m.chat] = [
-										await alpha.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik`, m), result, 4999,
+										await herta.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : ${(120000 / 1000).toFixed(2)} detik`, m), result, 4999,
 										setTimeout(() => {
 											if (siapaaku[m.chat]) {
 												reply(waktuHabis(result.jawaban) + "\n\nkirim perintah .tebaksiapa untuk bermain lagi!")
@@ -1808,16 +1812,16 @@ const swn = args.join(" ")
 const pcknm = swn.split("|")[0];
 const atnm = swn.split("|")[1];
 if (m.quoted.isAnimated === true) {
-alpha.downloadAndSaveMediaMessage(quoted, "gifee")
-alpha.sendMessage(from, {sticker:fs.readFileSync("gifee.webp")},{quoted:m})
+herta.downloadAndSaveMediaMessage(quoted, "gifee")
+herta.sendMessage(from, {sticker:fs.readFileSync("gifee.webp")},{quoted:m})
 } else if (/image/.test(mime)) {
 let media = await quoted.download()
-let encmedia = await alpha.sendImageAsSticker(m.chat, media, m, { packname: pcknm, author: global.atnm })
+let encmedia = await herta.sendImageAsSticker(m.chat, media, m, { packname: pcknm, author: global.atnm })
 await fs.unlinkSync(encmedia)
 } else if (/video/.test(mime)) {
 if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 seconds!')
 let media = await quoted.download()
-let encmedia = await alpha.sendVideoAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
+let encmedia = await herta.sendVideoAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
 await fs.unlinkSync(encmedia)
 } else {
 reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Seconds`)
@@ -1847,7 +1851,7 @@ case "baekhyung": {
 	let res = await fetch(global.api('alfa', '/api/cogan/' + command, {}, 'apikey'))
 	if (!res.ok) throw await res.text()
 	let img = await res.buffer()
-	alpha.sendFile(m.chat, img, 'cogan.jpg', `GANTENG GA KA ?`, m)
+	herta.sendFile(m.chat, img, 'cogan.jpg', `GANTENG GA KA ?`, m)
 	}
 	break
 	case 'group': case 'grup': {
@@ -1855,9 +1859,9 @@ case "baekhyung": {
 		if (!isAdmins) return reply('Fitur Khusus admin!')
 		if (!isBotAdmins) return reply("Jadikan bot sebagai admin terlebih dahulu")
 		if (args[0] === 'close'){
-			await alpha.groupSettingUpdate(m.chat, 'announcement').then((res) => m.reply(`*Successfully Closed The Group*`)).catch((err) => m.reply(jsonformat(err)))
+			await herta.groupSettingUpdate(m.chat, 'announcement').then((res) => m.reply(`*Successfully Closed The Group*`)).catch((err) => m.reply(jsonformat(err)))
 			} else if (args[0] === 'open'){
-				await alpha.groupSettingUpdate(m.chat, 'not_announcement').then((res) => m.reply(`*Successfully Opened The Group*`)).catch((err) => m.reply(jsonformat(err)))
+				await herta.groupSettingUpdate(m.chat, 'not_announcement').then((res) => m.reply(`*Successfully Opened The Group*`)).catch((err) => m.reply(jsonformat(err)))
 				} else {
 					reply(`Kirim perintah ${prefix + command} open/close\n\nContoh: ${prefix + command} open`)
 					}
@@ -1965,7 +1969,7 @@ case 'sound99':
 case 'sound100':
 if (global.premium && !isCreator) return reply (`Fitur Ini Khusus Member Premium, Jika Mau Buy Premium Ketik .Buyprem`)
 Jer_dev = await getBuffer(`https://github.com/DGXeon/Tiktokmusic-API/raw/master/tiktokmusic/${command}.mp3`)
-await alpha.sendMessage(m.chat, { audio: Jer_dev, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
+await herta.sendMessage(m.chat, { audio: Jer_dev, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
 break
 case 'horror':
             case 'game8bit':
@@ -2006,7 +2010,7 @@ case 'horror':
             }, 'apikey'))
             if (!res.ok) throw await res.text()
             let img = await res.buffer()
-            alpha.sendFile(m.chat, img, 'textpro.jpg', 'DONE', m)
+            herta.sendFile(m.chat, img, 'textpro.jpg', 'DONE', m)
             }
             break
             case 'anticall': {
@@ -2028,14 +2032,14 @@ case 'horror':
             	if (!Number(text)) throw `Contoh : ${prefix + command} 6281315252010`
             let anu = await primbon.nomer_hoki(Number(text))
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Nomor HP :* ${anu.message.nomer_hp}\n *Angka Shuzi :* ${anu.message.angka_shuzi}\n *Energi Positif :*\n- Kekayaan : ${anu.message.energi_positif.kekayaan}\n- Kesehatan : ${anu.message.energi_positif.kesehatan}\n- Cinta : ${anu.message.energi_positif.cinta}\n- Kestabilan : ${anu.message.energi_positif.kestabilan}\n- Persentase : ${anu.message.energi_positif.persentase}\n *Energi Negatif :*\n- Perselisihan : ${anu.message.energi_negatif.perselisihan}\n- Kehilangan : ${anu.message.energi_negatif.kehilangan}\n- Malapetaka : ${anu.message.energi_negatif.malapetaka}\n- Kehancuran : ${anu.message.energi_negatif.kehancuran}\n- Persentase : ${anu.message.energi_negatif.persentase}`, m)
+            herta.sendText(m.chat, ` *Nomor HP :* ${anu.message.nomer_hp}\n *Angka Shuzi :* ${anu.message.angka_shuzi}\n *Energi Positif :*\n- Kekayaan : ${anu.message.energi_positif.kekayaan}\n- Kesehatan : ${anu.message.energi_positif.kesehatan}\n- Cinta : ${anu.message.energi_positif.cinta}\n- Kestabilan : ${anu.message.energi_positif.kestabilan}\n- Persentase : ${anu.message.energi_positif.persentase}\n *Energi Negatif :*\n- Perselisihan : ${anu.message.energi_negatif.perselisihan}\n- Kehilangan : ${anu.message.energi_negatif.kehilangan}\n- Malapetaka : ${anu.message.energi_negatif.malapetaka}\n- Kehancuran : ${anu.message.energi_negatif.kehancuran}\n- Persentase : ${anu.message.energi_negatif.persentase}`, m)
             }
             break
             case 'artimimpi': case 'tafsirmimpi': {
             	if (!text) throw `Contoh : ${prefix + command} belanja`
             let anu = await primbon.tafsir_mimpi(text)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Mimpi :* ${anu.message.mimpi}\n *Arti :* ${anu.message.arti}\n *Solusi :* ${anu.message.solusi}`, m)
+            herta.sendText(m.chat, ` *Mimpi :* ${anu.message.mimpi}\n *Arti :* ${anu.message.arti}\n *Solusi :* ${anu.message.solusi}`, m)
             }
             break
             case 'ramalanjodoh': case 'ramaljodoh': {
@@ -2043,7 +2047,7 @@ case 'horror':
             let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
             let anu = await primbon.ramalan_jodoh(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Nama Anda :* ${anu.message.nama_anda.nama}\n *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n *Hasil :* ${anu.message.result}\n *Catatan :* ${anu.message.catatan}`, m)
+            herta.sendText(m.chat, ` *Nama Anda :* ${anu.message.nama_anda.nama}\n *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n *Hasil :* ${anu.message.result}\n *Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'ramalanjodohbali': case 'ramaljodohbali': {
@@ -2051,7 +2055,7 @@ case 'horror':
             let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
             let anu = await primbon.ramalan_jodoh_bali(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Nama Anda :* ${anu.message.nama_anda.nama}\n *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n *Hasil :* ${anu.message.result}\n *Catatan :* ${anu.message.catatan}`, m)
+            herta.sendText(m.chat, ` *Nama Anda :* ${anu.message.nama_anda.nama}\n *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n *Hasil :* ${anu.message.result}\n *Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'suamiistri': {
@@ -2059,7 +2063,7 @@ case 'horror':
             let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
             let anu = await primbon.suami_istri(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Nama Suami :* ${anu.message.suami.nama}\n *Lahir Suami :* ${anu.message.suami.tgl_lahir}\n *Nama Istri :* ${anu.message.istri.nama}\n *Lahir Istri :* ${anu.message.istri.tgl_lahir}\n *Hasil :* ${anu.message.result}\n *Catatan :* ${anu.message.catatan}`, m)
+            herta.sendText(m.chat, ` *Nama Suami :* ${anu.message.suami.nama}\n *Lahir Suami :* ${anu.message.suami.tgl_lahir}\n *Nama Istri :* ${anu.message.istri.nama}\n *Lahir Istri :* ${anu.message.istri.tgl_lahir}\n *Hasil :* ${anu.message.result}\n *Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'ramalancinta': case 'ramalcinta': {
@@ -2067,14 +2071,14 @@ case 'horror':
             let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
             let anu = await primbon.ramalan_cinta(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Nama Anda :* ${anu.message.nama_anda.nama}\n *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n *Sisi Positif :* ${anu.message.sisi_positif}\n *Sisi Negatif :* ${anu.message.sisi_negatif}\n *Catatan :* ${anu.message.catatan}`, m)
+            herta.sendText(m.chat, ` *Nama Anda :* ${anu.message.nama_anda.nama}\n *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n *Sisi Positif :* ${anu.message.sisi_positif}\n *Sisi Negatif :* ${anu.message.sisi_negatif}\n *Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'artinama': {
             	if (!text) throw `Contoh : ${prefix + command} Dika Ardianta`
             let anu = await primbon.arti_nama(text)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Nama :* ${anu.message.nama}\n *Arti :* ${anu.message.arti}\n *Catatan :* ${anu.message.catatan}`, m)
+            herta.sendText(m.chat, ` *Nama :* ${anu.message.nama}\n *Arti :* ${anu.message.arti}\n *Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'kecocokannama': case 'cocoknama': {
@@ -2082,7 +2086,7 @@ case 'horror':
             let [nama, tgl, bln, thn] = text.split`,`
             let anu = await primbon.kecocokan_nama(nama, tgl, bln, thn)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Nama :* ${anu.message.nama}\n *Lahir :* ${anu.message.tgl_lahir}\n *Life Path :* ${anu.message.life_path}\n *Destiny :* ${anu.message.destiny}\n *Destiny Desire :* ${anu.message.destiny_desire}\n *Personality :* ${anu.message.personality}\n *Persentase :* ${anu.message.persentase_kecocokan}`, m)
+            herta.sendText(m.chat, ` *Nama :* ${anu.message.nama}\n *Lahir :* ${anu.message.tgl_lahir}\n *Life Path :* ${anu.message.life_path}\n *Destiny :* ${anu.message.destiny}\n *Destiny Desire :* ${anu.message.destiny_desire}\n *Personality :* ${anu.message.personality}\n *Persentase :* ${anu.message.persentase_kecocokan}`, m)
             }
             break
             case 'kecocokanpasangan': case 'cocokpasangan': case 'pasangan': {
@@ -2090,7 +2094,7 @@ case 'horror':
             let [nama1, nama2] = text.split`|`
             let anu = await primbon.kecocokan_nama_pasangan(nama1, nama2)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendImage(m.chat,  anu.message.gambar, ` *Nama Anda :* ${anu.message.nama_anda}\n *Nama Pasangan :* ${anu.message.nama_pasangan}\n *Sisi Positif :* ${anu.message.sisi_positif}\n *Sisi Negatif :* ${anu.message.sisi_negatif}`, m)
+            herta.sendImage(m.chat,  anu.message.gambar, ` *Nama Anda :* ${anu.message.nama_anda}\n *Nama Pasangan :* ${anu.message.nama_pasangan}\n *Sisi Positif :* ${anu.message.sisi_positif}\n *Sisi Negatif :* ${anu.message.sisi_negatif}`, m)
             }
             break
             case 'jadianpernikahan': case 'jadiannikah': {
@@ -2098,7 +2102,7 @@ case 'horror':
             let [tgl, bln, thn] = text.split`,`
             let anu = await primbon.tanggal_jadian_pernikahan(tgl, bln, thn)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Tanggal Pernikahan :* ${anu.message.tanggal}\n *karakteristik :* ${anu.message.karakteristik}`, m)
+            herta.sendText(m.chat, ` *Tanggal Pernikahan :* ${anu.message.tanggal}\n *karakteristik :* ${anu.message.karakteristik}`, m)
             }
             break
             case 'sifatusaha': {
@@ -2106,7 +2110,7 @@ case 'horror':
             let [tgl, bln, thn] = text.split`,`
             let anu = await primbon.sifat_usaha_bisnis(tgl, bln, thn)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Lahir :* ${anu.message.hari_lahir}\n *Usaha :* ${anu.message.usaha}`, m)
+            herta.sendText(m.chat, ` *Lahir :* ${anu.message.hari_lahir}\n *Usaha :* ${anu.message.usaha}`, m)
             }
             break
             case 'rejeki': case 'rezeki': {
@@ -2114,7 +2118,7 @@ case 'horror':
             let [tgl, bln, thn] = text.split`,`
             let anu = await primbon.rejeki_hoki_weton(tgl, bln, thn)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Lahir :* ${anu.message.hari_lahir}\n *Rezeki :* ${anu.message.rejeki}\n *Catatan :* ${anu.message.catatan}`, m)
+            herta.sendText(m.chat, ` *Lahir :* ${anu.message.hari_lahir}\n *Rezeki :* ${anu.message.rejeki}\n *Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'pekerjaan': case 'kerja': {
@@ -2122,7 +2126,7 @@ case 'horror':
             let [tgl, bln, thn] = text.split`,`
             let anu = await primbon.pekerjaan_weton_lahir(tgl, bln, thn)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Lahir :* ${anu.message.hari_lahir}\n *Pekerjaan :* ${anu.message.pekerjaan}\n *Catatan :* ${anu.message.catatan}`, m)
+            herta.sendText(m.chat, ` *Lahir :* ${anu.message.hari_lahir}\n *Pekerjaan :* ${anu.message.pekerjaan}\n *Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'ramalannasib': case 'ramalnasib': case 'nasib': {
@@ -2130,7 +2134,7 @@ case 'horror':
             let [tgl, bln, thn] = text.split`,`
             let anu = await primbon.ramalan_nasib(tgl, bln, thn)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Analisa :* ${anu.message.analisa}\n *Angka Akar :* ${anu.message.angka_akar}\n *Sifat :* ${anu.message.sifat}\n *Elemen :* ${anu.message.elemen}\n *Angka Keberuntungan :* ${anu.message.angka_keberuntungan}`, m)
+            herta.sendText(m.chat, ` *Analisa :* ${anu.message.analisa}\n *Angka Akar :* ${anu.message.angka_akar}\n *Sifat :* ${anu.message.sifat}\n *Elemen :* ${anu.message.elemen}\n *Angka Keberuntungan :* ${anu.message.angka_keberuntungan}`, m)
             }
             break
             case 'potensipenyakit': case 'penyakit': {
@@ -2138,7 +2142,7 @@ case 'horror':
             let [tgl, bln, thn] = text.split`,`
             let anu = await primbon.cek_potensi_penyakit(tgl, bln, thn)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Analisa :* ${anu.message.analisa}\n *Sektor :* ${anu.message.sektor}\n *Elemen :* ${anu.message.elemen}\n *Catatan :* ${anu.message.catatan}`, m)
+            herta.sendText(m.chat, ` *Analisa :* ${anu.message.analisa}\n *Sektor :* ${anu.message.sektor}\n *Elemen :* ${anu.message.elemen}\n *Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'artitarot': case 'tarot': {
@@ -2146,7 +2150,7 @@ case 'horror':
             let [tgl, bln, thn] = text.split`,`
             let anu = await primbon.arti_kartu_tarot(tgl, bln, thn)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendImage(m.chat, anu.message.image, ` *Lahir :* ${anu.message.tgl_lahir}\n *Simbol Tarot :* ${anu.message.simbol_tarot}\n *Arti :* ${anu.message.arti}\n *Catatan :* ${anu.message.catatan}`, m)
+            herta.sendImage(m.chat, anu.message.image, ` *Lahir :* ${anu.message.tgl_lahir}\n *Simbol Tarot :* ${anu.message.simbol_tarot}\n *Arti :* ${anu.message.arti}\n *Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'fengshui': {
@@ -2154,7 +2158,7 @@ case 'horror':
             let [nama, gender, tahun] = text.split`,`
             let anu = await primbon.perhitungan_feng_shui(nama, gender, tahun)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Nama :* ${anu.message.nama}\n *Lahir :* ${anu.message.tahun_lahir}\n *Gender :* ${anu.message.jenis_kelamin}\n *Angka Kua :* ${anu.message.angka_kua}\n *Kelompok :* ${anu.message.kelompok}\n *Karakter :* ${anu.message.karakter}\n *Sektor Baik :* ${anu.message.sektor_baik}\n *Sektor Buruk :* ${anu.message.sektor_buruk}`, m)
+            herta.sendText(m.chat, ` *Nama :* ${anu.message.nama}\n *Lahir :* ${anu.message.tahun_lahir}\n *Gender :* ${anu.message.jenis_kelamin}\n *Angka Kua :* ${anu.message.angka_kua}\n *Kelompok :* ${anu.message.kelompok}\n *Karakter :* ${anu.message.karakter}\n *Sektor Baik :* ${anu.message.sektor_baik}\n *Sektor Buruk :* ${anu.message.sektor_buruk}`, m)
             }
             break
             case 'haribaik': {
@@ -2162,7 +2166,7 @@ case 'horror':
             let [tgl, bln, thn] = text.split`,`
             let anu = await primbon.petung_hari_baik(tgl, bln, thn)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Lahir :* ${anu.message.tgl_lahir}\n *Kala Tinantang :* ${anu.message.kala_tinantang}\n *Info :* ${anu.message.info}\n *Catatan :* ${anu.message.catatan}`, m)
+            herta.sendText(m.chat, ` *Lahir :* ${anu.message.tgl_lahir}\n *Kala Tinantang :* ${anu.message.kala_tinantang}\n *Info :* ${anu.message.info}\n *Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'harisangar': case 'taliwangke': {
@@ -2170,7 +2174,7 @@ case 'horror':
             let [tgl, bln, thn] = text.split`,`
             let anu = await primbon.hari_sangar_taliwangke(tgl, bln, thn)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Lahir :* ${anu.message.tgl_lahir}\n *Hasil :* ${anu.message.result}\n *Info :* ${anu.message.info}\n *Catatan :* ${anu.message.catatan}`, m)
+            herta.sendText(m.chat, ` *Lahir :* ${anu.message.tgl_lahir}\n *Hasil :* ${anu.message.result}\n *Info :* ${anu.message.info}\n *Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'harinaas': case 'harisial': {
@@ -2178,7 +2182,7 @@ case 'horror':
             let [tgl, bln, thn] = text.split`,`
             let anu = await primbon.primbon_hari_naas(tgl, bln, thn)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Hari Lahir :* ${anu.message.hari_lahir}\n *Tanggal Lahir :* ${anu.message.tgl_lahir}\n *Hari Naas :* ${anu.message.hari_naas}\n *Info :* ${anu.message.catatan}\n *Catatan :* ${anu.message.info}`, m)
+            herta.sendText(m.chat, ` *Hari Lahir :* ${anu.message.hari_lahir}\n *Tanggal Lahir :* ${anu.message.tgl_lahir}\n *Hari Naas :* ${anu.message.hari_naas}\n *Info :* ${anu.message.catatan}\n *Catatan :* ${anu.message.info}`, m)
             }
             break
             case 'nagahari': case 'harinaga': {
@@ -2186,7 +2190,7 @@ case 'horror':
             let [tgl, bln, thn] = text.split`,`
             let anu = await primbon.rahasia_naga_hari(tgl, bln, thn)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Hari Lahir :* ${anu.message.hari_lahir}\n *Tanggal Lahir :* ${anu.message.tgl_lahir}\n *Arah Naga Hari :* ${anu.message.arah_naga_hari}\n *Catatan :* ${anu.message.catatan}`, m)
+            herta.sendText(m.chat, ` *Hari Lahir :* ${anu.message.hari_lahir}\n *Tanggal Lahir :* ${anu.message.tgl_lahir}\n *Arah Naga Hari :* ${anu.message.arah_naga_hari}\n *Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'arahrejeki': case 'arahrezeki': {
@@ -2194,7 +2198,7 @@ case 'horror':
             let [tgl, bln, thn] = text.split`,`
             let anu = await primbon.primbon_arah_rejeki(tgl, bln, thn)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Hari Lahir :* ${anu.message.hari_lahir}\n *tanggal Lahir :* ${anu.message.tgl_lahir}\n *Arah Rezeki :* ${anu.message.arah_rejeki}\n *Catatan :* ${anu.message.catatan}`, m)
+            herta.sendText(m.chat, ` *Hari Lahir :* ${anu.message.hari_lahir}\n *tanggal Lahir :* ${anu.message.tgl_lahir}\n *Arah Rezeki :* ${anu.message.arah_rejeki}\n *Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'peruntungan': {
@@ -2202,7 +2206,7 @@ case 'horror':
             let [nama, tgl, bln, thn, untuk] = text.split`,`
             let anu = await primbon.ramalan_peruntungan(nama, tgl, bln, thn, untuk)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Nama :* ${anu.message.nama}\n *Lahir :* ${anu.message.tgl_lahir}\n *Peruntungan Tahun :* ${anu.message.peruntungan_tahun}\n *Hasil :* ${anu.message.result}\n *Catatan :* ${anu.message.catatan}`, m)
+            herta.sendText(m.chat, ` *Nama :* ${anu.message.nama}\n *Lahir :* ${anu.message.tgl_lahir}\n *Peruntungan Tahun :* ${anu.message.peruntungan_tahun}\n *Hasil :* ${anu.message.result}\n *Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'weton': case 'wetonjawa': {
@@ -2210,7 +2214,7 @@ case 'horror':
             let [tgl, bln, thn] = text.split`,`
             let anu = await primbon.weton_jawa(tgl, bln, thn)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Tanggal :* ${anu.message.tanggal}\n *Jumlah Neptu :* ${anu.message.jumlah_neptu}\n *Watak Hari :* ${anu.message.watak_hari}\n *Naga Hari :* ${anu.message.naga_hari}\n *Jam Baik :* ${anu.message.jam_baik}\n *Watak Kelahiran :* ${anu.message.watak_kelahiran}`, m)
+            herta.sendText(m.chat, ` *Tanggal :* ${anu.message.tanggal}\n *Jumlah Neptu :* ${anu.message.jumlah_neptu}\n *Watak Hari :* ${anu.message.watak_hari}\n *Naga Hari :* ${anu.message.naga_hari}\n *Jam Baik :* ${anu.message.jam_baik}\n *Watak Kelahiran :* ${anu.message.watak_kelahiran}`, m)
             }
             break
             case 'sifat': case 'karakter': {
@@ -2218,7 +2222,7 @@ case 'horror':
             let [nama, tgl, bln, thn] = text.split`,`
             let anu = await primbon.sifat_karakter_tanggal_lahir(nama, tgl, bln, thn)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Nama :* ${anu.message.nama}\n *Lahir :* ${anu.message.tgl_lahir}\n *Garis Hidup :* ${anu.message.garis_hidup}`, m)
+            herta.sendText(m.chat, ` *Nama :* ${anu.message.nama}\n *Lahir :* ${anu.message.tgl_lahir}\n *Garis Hidup :* ${anu.message.garis_hidup}`, m)
             }
             break
             case 'keberuntungan': {
@@ -2226,7 +2230,7 @@ case 'horror':
             let [nama, tgl, bln, thn] = text.split`,`
             let anu = await primbon.potensi_keberuntungan(nama, tgl, bln, thn)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Nama :* ${anu.message.nama}\n *Lahir :* ${anu.message.tgl_lahir}\n *Hasil :* ${anu.message.result}`, m)
+            herta.sendText(m.chat, ` *Nama :* ${anu.message.nama}\n *Lahir :* ${anu.message.tgl_lahir}\n *Hasil :* ${anu.message.result}`, m)
             }
             break
             case 'memancing': {
@@ -2234,7 +2238,7 @@ case 'horror':
             let [tgl, bln, thn] = text.split`,`
             let anu = await primbon.primbon_memancing_ikan(tgl, bln, thn)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Tanggal :* ${anu.message.tgl_memancing}\n *Hasil :* ${anu.message.result}\n *Catatan :* ${anu.message.catatan}`, m)
+            herta.sendText(m.chat, ` *Tanggal :* ${anu.message.tgl_memancing}\n *Hasil :* ${anu.message.result}\n *Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'masasubur': {
@@ -2242,14 +2246,14 @@ case 'horror':
             let [tgl, bln, thn, siklus] = text.split`,`
             let anu = await primbon.masa_subur(tgl, bln, thn, siklus)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Hasil :* ${anu.message.result}\n *Catatan :* ${anu.message.catatan}`, m)
+            herta.sendText(m.chat, ` *Hasil :* ${anu.message.result}\n *Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'shio': {
             	if (!text) throw `Contoh : ${prefix + command} tikus\n\nNote : For Detail https://primbon.com/shio.htm`
             let anu = await primbon.shio(text)
             if (anu.status == false) return m.reply(anu.message)
-            alpha.sendText(m.chat, ` *Hasil :* ${anu.message}`, m)
+            herta.sendText(m.chat, ` *Hasil :* ${anu.message}`, m)
             }
             break
             //Asupan
@@ -2279,7 +2283,7 @@ case 'horror':
             let res = await fetch(global.api('alfa', '/api/asupan/' + command, {}, 'apikey'))
             if (!res.ok) throw await res.text()
             let img = await res.buffer()
-            alpha.sendFile(m.chat, img, 'asupan.mp4', 'DONE', m)
+            herta.sendFile(m.chat, img, 'asupan.mp4', 'DONE', m)
             }
             break
             case 'jodohku': {
@@ -2294,7 +2298,7 @@ let ments = [me, jodoh]
 let buttons = [
 { buttonId: '.jodohku', buttonText: { displayText: 'Jodohku' }, type: 1 }
 ]
-await alpha.sendMessage(m.chat, buttons, jawab, alpha.user.name, m, {mentions: ments})
+await herta.sendMessage(m.chat, buttons, jawab, herta.user.name, m, {mentions: ments})
 }
 break
 case 'jadian': {
@@ -2309,7 +2313,7 @@ let menst = [orang, jodoh]
 let buttons = [
 { buttonId: '.jadian', buttonText: { displayText: 'Jodohku' }, type: 1 }
 ]
-await alpha.sendMessage(m.chat, buttons, jawab, alpha.user.name, m, {mentions: menst})
+await herta.sendMessage(m.chat, buttons, jawab, herta.user.name, m, {mentions: menst})
 }
 break
 case 'setexif': {
@@ -2332,7 +2336,7 @@ case 'setexif': {
 		reply("Sedang Di Proses")
 		require('./lib/tiktok').Tiktok(q).then( data => {
 			var button = [{ buttonId: `.tiktokaudio2 ${q}`, buttonText: { displayText: `AUDIO` }, type: 1 }, { buttonId: `.grubbot`, buttonText: { displayText: `GRUB BOT` }, type: 1 }]
-			alpha.sendMessage(m.chat, { caption: `DONE!`, video: { url: data.watermark }, buttons: button, footer: namabot, mentions: [m.sender] })
+			herta.sendMessage(m.chat, { caption: `DONE!`, video: { url: data.watermark }, buttons: button, footer: namabot, mentions: [m.sender] })
 			})
 			}
 			break
@@ -2377,7 +2381,7 @@ case 'piatu':{
 	if (!m.isGroup) return reply('Fitur Ini Khusus Group!')
 	let member = participants.map((u) => u.id)
 	let org = member[Math.floor(Math.random() * member.length)]
-	alpha.sendMessage(from, { text: `anak ${command} di sini adalah @${org.split('@')[0]}`, mentions: [org] }, { quoted: m })
+	herta.sendMessage(from, { text: `anak ${command} di sini adalah @${org.split('@')[0]}`, mentions: [org] }, { quoted: m })
 	}
 	break
 	case 'goblok':
@@ -2412,7 +2416,7 @@ case 'piatu':{
 	case 'asu':
 	case 'bego':
 	case 'sangean':{
-	alpha.sendMessage(m.chat, {audio: fs.readFileSync(gabolehtoxic), mimetype:'audio/mpeg', ptt: true}, {quoted: m})
+	herta.sendMessage(m.chat, {audio: fs.readFileSync(gabolehtoxic), mimetype:'audio/mpeg', ptt: true}, {quoted: m})
 	}
 	break
 	
