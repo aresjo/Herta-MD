@@ -948,7 +948,7 @@ case'antilink':{
          	if (global.premium && !isCreator) return reply (`Fitur Ini Khusus Member Premium, Jika Mau Buy Premium Ketik .Buyprem`)
          reply("Sedang Di Proses")
          var but = [{ buttonId: `grubbot`, buttonText: { displayText: `GROUP BOT` }, type: 1 }]
-         var kayes = JSON.parse(fs.readFileSync('./RANDOM/kayes.json'))
+         var kayes = JSON.parse(fs.readFileSync('./random/kayes.json'))
          var hasil = pickRandom(kayes)
          herta.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
          }
@@ -956,7 +956,7 @@ case'antilink':{
          case 'tiktokgirl':{
          	if (global.premium && !isCreator) return reply (`Fitur Ini Khusus Member Premium, Jika Mau Buy Premium Ketik .Buyprem`)
          reply("Sedang Di Proses")
-         var asupan = JSON.parse(fs.readFileSync('./RANDOM/tiktokgirl.json'))
+         var asupan = JSON.parse(fs.readFileSync('./random/tiktokgirl.json'))
          var hasil = pickRandom(asupan)
          herta.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
          }
@@ -964,7 +964,7 @@ case'antilink':{
          case 'tiktokghea':{
          	if (global.premium && !isCreator) return reply (`Fitur Ini Khusus Member Premium, Jika Mau Buy Premium Ketik .Buyprem`)
          	reply("Sedang Di Proses")
-         var gheayubi = JSON.parse(fs.readFileSync('./RANDOM/gheayubi.json'))
+         var gheayubi = JSON.parse(fs.readFileSync('./random/gheayubi.json'))
          var hasil = pickRandom(gheayubi)
          herta.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
          }
@@ -972,7 +972,7 @@ case'antilink':{
          case 'tiktokbocil':{
          	if (global.premium && !isCreator) return reply (`Fitur Ini Khusus Member Premium, Jika Mau Buy Premium Ketik .Buyprem`)
          	reply("Sedang Di Proses")
-         var bocil = JSON.parse(fs.readFileSync('./RANDOM/bocil.json'))
+         var bocil = JSON.parse(fs.readFileSync('./random/bocil.json'))
          var hasil = pickRandom(bocil)
          herta.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
          }
@@ -980,7 +980,7 @@ case'antilink':{
          case 'tiktokukhty':{
          	if (global.premium && !isCreator) return reply (`Fitur Ini Khusus Member Premium, Jika Mau Buy Premium Ketik .Buyprem`)
          	reply("Sedang Di Proses")
-         var ukhty = JSON.parse(fs.readFileSync('./RANDOM/ukhty.json'))
+         var ukhty = JSON.parse(fs.readFileSync('./random/ukhty.json'))
          var hasil = pickRandom(ukhty)
          herta.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
          }
@@ -988,7 +988,7 @@ case'antilink':{
          case 'tiktoksantuy':{
          	if (global.premium && !isCreator) return reply (`Fitur Ini Khusus Member Premium, Jika Mau Buy Premium Ketik .Buyprem`)
          	reply("Sedang Di Proses")
-         var santuy = JSON.parse(fs.readFileSync('./RANDOM/santuy.json'))
+         var santuy = JSON.parse(fs.readFileSync('./random/santuy.json'))
          var hasil = pickRandom(santuy)
          herta.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
          }
@@ -996,7 +996,7 @@ case'antilink':{
          case 'tiktokpanrika':{
          	if (global.premium && !isCreator) return reply (`Fitur Ini Khusus Member Premium, Jika Mau Buy Premium Ketik .Buyprem`)
          	reply("Sedang Di Proses")
-         var rikagusriani = JSON.parse(fs.readFileSync('./RANDOM/panrika.json'))
+         var rikagusriani = JSON.parse(fs.readFileSync('./random/panrika.json'))
          var hasil = pickRandom(rikagusriani)
          herta.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
          }
@@ -1004,7 +1004,7 @@ case'antilink':{
          case 'tiktoknotnot':{
          	if (global.premium && !isCreator) return reply (`Fitur Ini Khusus Member Premium, Jika Mau Buy Premium Ketik .Buyprem`)
          reply("Sedang Di Proses")
-         var notnot = JSON.parse(fs.readFileSync('./RANDOM/notnot.json'))
+         var notnot = JSON.parse(fs.readFileSync('./random/notnot.json'))
          var hasil = pickRandom(notnot)
          herta.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
          }
@@ -1012,7 +1012,7 @@ case'antilink':{
          case 'tiktokgabagtha':{
          	if (global.premium && !isCreator) return reply (`Fitur Ini Khusus Member Premium, Jika Mau Buy Premium Ketik .Buyprem`)
          	reply("Sedang Di Proses")
-         var gabagtha = JSON.parse(fs.readFileSync('./RANDOM/tiktokgabagtha.json'))
+         var gabagtha = JSON.parse(fs.readFileSync('./random/tiktokgabagtha.json'))
          var hasil = pickRandom(gabagtha)
          herta.sendMessage(m.chat, { caption: `Jangan Lupa Bilang Makasih !`, video: { url: hasil.url }, footer: namabot }, { quoted: m })
          }
