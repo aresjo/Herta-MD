@@ -692,7 +692,7 @@ case'antilink':{
          break
          case 'sc':
          case 'script':{
-         	reply("SCRIPT ORI BY JER OFC \n\nBASE NY JER OFC")
+         	reply("SCRIPT ORI BY ARES JO \n\nBASE NY ARES JO")
          }
          break
          case 'tqto':
@@ -700,7 +700,7 @@ case'antilink':{
          	reply(`â•­â”€â’ ã€Œ THANKS TO ã€ 
 â”‚â—‹ Allah Swt.
 â”‚â—‹ Myparents
-â”‚â—‹ Hads
+â”‚â—‹ Ares Jo
 â”‚â—‹ VinzDev
 â”‚â—‹ Misel
 â”‚â—‹ Fatih Arridho
