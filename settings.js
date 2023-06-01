@@ -10,36 +10,36 @@ global.APIKeys = {
 	'https://api.zeeoneofc.my.id': '7DNeoKcX', // ISI APIKEY LU
 }
 
-global.namabot = "JER-BOTZ MD" // UBAH JADI NAMA LU
-global.namaowner = "JER" // NAMA OWNER
-global.footer_text = "© JER-BOTZ MD" + namabot // NAMA BOT
+global.namabot = "Loli MD" // UBAH JADI NAMA LU
+global.namaowner = "Ares Jo" // NAMA OWNER
+global.footer_text = "© Ares Jo" + namabot // NAMA BOT
 global.pp_bot = fs.readFileSync("./image/allmenubot.jpg") // FOTO BOT MAX 50KB BIAR GA DELAY
 global.qris = fs.readFileSync("./image/qris.jpg") // FOTO QRIS MAX 50KB BIAR GA DELLAY
-global.owner = ['6281315252010','6281315252010'] // UBAH NOMOR YANG MAU DI JADIKAN OWNER
+global.owner = ['6288804282206','6288804282206'] // UBAH NOMOR YANG MAU DI JADIKAN OWNER
 // PEMISAH \\
 global.sessionName = 'session' // GAK USAH UBAH
 global.prefa = ['', '!', '.', '🐦', '🐤', '🗿'] // GAK USAH UBAH
 global.sewabot = ("SEWA CHAT OWNER") // ISI HARGA SEWA BOT LU
 global.donasi = ("JANGAN LUPA DONASI BANG 😅🤙") // QRIS SAMA FOTO DONASI UDAH CONNECT TINGGAL GANTI FOTO QRIS AJA
-global.script = ("https://youtu.be/GyHK5BVyBeQ NO ENC ? BUY") // BEBAS ASAL JAN HAPUS
-global.fakelink = "https://chat.whatsapp.com/KTXtrESxZCg8aTUbP62c6d" // bebas asal jan hapus
-global.grubbot = (`*INI KAK LINK GRUB NYA*\n\nhttps://chat.whatsapp.com/KTXtrESxZCg8aTUbP62c6d`) // GANTI LINK GRUB BOT LU \\
+global.script = ("https://youtu.be/Aresjo NO ENC ? BUY") // BEBAS ASAL JAN HAPUS
+global.fakelink = "https://chat.whatsapp.com/KdjpQExBGA9HVyCRQZo6If" // bebas asal jan hapus
+global.grubbot = (`*INI KAK LINK GRUB NYA*\n\nhttps://chat.whatsapp.com/KdjpQExBGA9HVyCRQZo6If`) // GANTI LINK GRUB BOT LU \\
 global.gabolehtoxic = ("./gabolehtoxic.mp3")
 
 // FALSE OR TRUE \\
 global.premium = false // UBAH JADI TRUE AGAR SEMUA FITUR KHUSUS PREMIUM
 global.autoTyping = true // BEBAS
-global.welcome = false // KALO MAU AUTO WELCOME UBAH JADI true
-global.left = false // KALO MAU AUTO LEFT UBAH JADI true
+global.welcome = true // KALO MAU AUTO WELCOME UBAH JADI true
+global.left = true // KALO MAU AUTO LEFT UBAH JADI true
 global.anticall = true // BEBAS
 
 // PEMISAH \\
-global.packname = '© JER-BOTZ' //sticker wm ubah
-global.author = 'Di Buat Oleh JER OFC' //sticker wm ganti nama kalian
+global.packname = '© Ares Jo' //sticker wm ubah
+global.author = 'Di Buat Oleh Ares Jo' //sticker wm ganti nama kalian
 // UBAH AJA NAMA NYA \\
 
 // BUY NO ENC 60K CHAT ME
-https://wa.me/6281315252010
+https://wa.me/6288804282206
 
 module.exports.helpMenu = (pushname) =>{
 	return `Halo Kak 👋 ${pushname}
@@ -483,18 +483,18 @@ ___________________________
 │
 │○ Allah Swt.
 │○ Myparents
-│○ Hads
-│○ VinzDev
+│○ Ares Jo
+│○ Zeltoria
 │○ Misel
 │○ Fatih Arridho
 │○ Ferdiz
 │○ Zeeoneofc
-│○ Jer Ofc
+│○ 4kprogram
 │○ All Creator Bot
 │
 ╰❒
 
-📝 *NOTE: BASE ORI BY JER OFFC JANGAN LUPA SUBSCRIBE JER OFC*
+📝 *NOTE: BASE ORI BY ARES JO JANGAN LUPA SUBSCRIBE ARES JO*
 `
 
 // NOTE JIKA MAU KASIH NAMA LU DI TQTO SILAHAKAN
